@@ -11,6 +11,7 @@ const DashboardPage = () => {
       <div className="page">DashboardPage</div>
       <RollButton />
       <JustRolled />
+      <Counter />
       <ListsOverview />
     </>
   );

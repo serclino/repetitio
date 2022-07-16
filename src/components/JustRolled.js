@@ -18,8 +18,8 @@ export const JustRolled = () => {
       <p>{rolledNum}</p>
       <button onClick={() => dispatch(toggleMistake({ rolledNum }))}>
         {!mistakesList.includes(rolledNum)
-          ? "Mark as Mistake"
-          : "Unmark from Mistakes"}
+          ? "Mark Mistake"
+          : "Unmark Mistake"}
       </button>
     </>
   );

@@ -9,6 +9,7 @@ const OverviewPage = () => {
   return (
     <>
       <div className="page">OverviewPage</div>
+      <Counter />
       <ListsOverview />
     </>
   );
