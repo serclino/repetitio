@@ -25,12 +25,21 @@ const listsSlice = createSlice({
         state.mainList = state.mainList.filter(n => n !== targetNum);
         state.rolledList.push(targetNum);
     },
+    toggleMistake: (state, action) => {
+        const { rolledNum } = action.payload;
+        if (!state.mistakesList.includes(rolledNum)) {
+            state.mistakesList.push(rolledNum);
+        } else {
+            state.mistakesList = state.mistakesList.filter(n => n !== rolledNum);
+        }
+    }
   },
 });
 
 export default listsSlice.reducer;
 
-export const { generateMainList, rollDice } = listsSlice.actions;
+export const { generateMainList, rollDice, toggleMistake } = listsSlice.actions;
 
 export const selectMainList = (state) => state.lists.mainList;
 export const selectRolledList = (state) => state.lists.rolledList;
+export const selectMistakesList = (state) => state.lists.mistakesList;
