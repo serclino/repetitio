@@ -12,20 +12,19 @@ function App() {
   return (
     <div className="App">
       <Route exact path="/" component={HomePage} />
+      <Route exact path="/setup" component={SetUpPage} />
       <Media query="(max-width: 599px)">
         {(matches) =>
           matches ? (
             <Switch>
               <Route exact path="/overview" component={OverviewPage} />
               <Route exact path="/roll" component={RollPage} />
-              <Redirect from="/setup" to="/overview" />
               <Redirect from="/dashboard" to="/roll" />
             </Switch>
           ) : (
             <Switch>
-              <Route exact path="/setup" component={SetUpPage} />
               <Route exact path="/dashboard" component={DashboardPage} />
-              <Redirect from="/overview" to="/setup" />
+              <Redirect from="/overview" to="/dashboard" />
               <Redirect from="/roll" to="/dashboard" />
             </Switch>
           )
