@@ -5,6 +5,7 @@ const SetUpPage = () => {
   return (
     <>
       <div>SetUpPage</div>
+      <ListGenerator/>
     </>
   );
 };

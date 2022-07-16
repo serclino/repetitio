@@ -1,36 +1,18 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { generateMainList } from "../features/listsSlice";
 
 export const ListGenerator = () => {
-  const [list, setList] = useState([]);
-  const [rolledList, setRolledList] = useState([]);
-  const [mistakesList, setMistakesList] = useState([]);
-
+  const dispatch = useDispatch();
   const [firstNum, setFirstNum] = useState(1);
   const [lastNum, setLastNum] = useState(20);
-  const [rolledNum, setRolledNum] = useState(null);
 
   const generateNewList = (e) => {
     e.preventDefault();
     if (firstNum > lastNum) {
       return console.log("error: lastNum must be bigger than firstNum");
     }
-    setList((prev) => {
-      const newList = [];
-      for (let i = firstNum; i <= lastNum; i++) {
-        newList.push(i);
-      }
-      return newList;
-    });
-    setRolledList((prev) => []);
-    setRolledNum((prev) => null);
-  };
-
-  const handleRoll = () => {
-    const randomNum = Math.floor(Math.random() * list.length);
-    const targetNum = list[randomNum];
-    setRolledNum(targetNum);
-    setList((prev) => prev.filter((n) => n !== targetNum));
-    setRolledList((prev) => [...prev, targetNum]);
+    dispatch(generateMainList({ firstNum, lastNum }));
   };
 
   const form = (
