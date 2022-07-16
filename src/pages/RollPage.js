@@ -9,6 +9,7 @@ const RollPage = () => {
     <>
       <div className="page">RollPage</div>
       <RollButton />
+      <JustRolled />
     </>
   );
 };

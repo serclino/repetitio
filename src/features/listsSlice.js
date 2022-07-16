@@ -24,7 +24,7 @@ const listsSlice = createSlice({
         const targetNum = state.mainList[randomNum];
         state.mainList = state.mainList.filter(n => n !== targetNum);
         state.rolledList.push(targetNum);
-    }
+    },
   },
 });
 
