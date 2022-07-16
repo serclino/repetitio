@@ -18,12 +18,19 @@ const listsSlice = createSlice({
         }
         state.rolledList = [];
         state.mistakesList = [];
+    },
+    rollDice: (state, action) => {
+        const randomNum = Math.floor(Math.random() * state.mainList.length);
+        const targetNum = state.mainList[randomNum];
+        state.mainList = state.mainList.filter(n => n !== targetNum);
+        state.rolledList.push(targetNum);
     }
   },
 });
 
 export default listsSlice.reducer;
 
-export const { generateMainList } = listsSlice.actions;
+export const { generateMainList, rollDice } = listsSlice.actions;
 
-export const selectMainList = (state) => state.lists.mainList; 
+export const selectMainList = (state) => state.lists.mainList;
+export const selectRolledList = (state) => state.lists.rolledList;

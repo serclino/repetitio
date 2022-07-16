@@ -5,7 +5,7 @@ import { Info } from "../components/Info";
 const HomePage = () => {
   return (
     <>
-      <div>HomePage</div>
+      <div className="page">HomePage</div>
       <Link to="/setup">Go to SetUp</Link>
       <h3>Routes for mobile pages:</h3>
       <Link to="/overview">Go to Overview</Link>

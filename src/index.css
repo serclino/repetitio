@@ -1,4 +1,9 @@
-div {
-    font-size: 36px;
-    font-weight: bold;
+.page {
+    font-size: 3rem;
+    color: red;
+}
+
+.component {
+    font-size: 2rem;
+    color: blue;
 }

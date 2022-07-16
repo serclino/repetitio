@@ -4,7 +4,7 @@ import { ListGenerator } from "../components/ListGenerator";
 const SetUpPage = () => {
   return (
     <>
-      <div>SetUpPage</div>
+      <div className="page">SetUpPage</div>
       <ListGenerator/>
     </>
   );

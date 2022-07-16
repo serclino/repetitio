@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { generateMainList } from "../features/listsSlice";
 
 export const ListGenerator = () => {
   const dispatch = useDispatch();
+  const history = useHistory();
   const [firstNum, setFirstNum] = useState(1);
   const [lastNum, setLastNum] = useState(20);
 
@@ -13,6 +15,7 @@ export const ListGenerator = () => {
       return console.log("error: lastNum must be bigger than firstNum");
     }
     dispatch(generateMainList({ firstNum, lastNum }));
+    history.push("/overview");
   };
 
   const form = (

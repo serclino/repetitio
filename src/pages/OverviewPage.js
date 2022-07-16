@@ -8,7 +8,7 @@ import { Info } from "../components/Info";
 const OverviewPage = () => {
   return (
     <>
-      <div>OverviewPage</div>
+      <div className="page">OverviewPage</div>
       <ListsOverview />
     </>
   );
