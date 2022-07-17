@@ -4,6 +4,7 @@ import { ListsOverview } from "../components/ListsOverview";
 import { Counter } from "../components/Counter";
 import { JustRolled } from "../components/JustRolled";
 import { RollButton } from "../components/RollButton";
+import { NextSteps } from "../components/NextSteps";
 
 const DashboardPage = () => {
   return (
@@ -12,6 +13,7 @@ const DashboardPage = () => {
       <RollButton />
       <JustRolled />
       <Counter />
+      <NextSteps />
       <ListsOverview />
     </>
   );

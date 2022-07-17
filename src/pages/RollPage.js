@@ -3,6 +3,7 @@ import { Counter } from "../components/Counter";
 import { JustRolled } from "../components/JustRolled";
 import { RollButton } from "../components/RollButton";
 import { Info } from "../components/Info";
+import { NextSteps } from "../components/NextSteps";
 
 const RollPage = () => {
   return (
@@ -10,6 +11,8 @@ const RollPage = () => {
       <div className="page">RollPage</div>
       <RollButton />
       <JustRolled />
+      <Counter />
+      <NextSteps />
     </>
   );
 };
