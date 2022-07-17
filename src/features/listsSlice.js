@@ -23,14 +23,14 @@ const listsSlice = createSlice({
       const randomNum = Math.floor(Math.random() * state.mainList.length);
       const targetNum = state.mainList[randomNum];
       state.mainList = state.mainList.filter((n) => n !== targetNum);
-      state.rolledList.push(targetNum);
+      state.rolledList.unshift(targetNum);
     },
     toggleMistake: (state, action) => {
       const { rolledNum } = action.payload;
       if (!state.mistakesList.includes(rolledNum)) {
-        state.mistakesList.push(rolledNum);
+        state.mistakesList.unshift(rolledNum);
       } else {
-        state.mistakesList.pop();
+        state.mistakesList.shift();
       }
     },
     generateNewListFromMistakes: (state, action) => {
