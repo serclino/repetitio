@@ -47,6 +47,11 @@ const listsSlice = createSlice({
         return a - b;
       });
     },
+    resetAllLists: (state, action) => {
+        state.mainList = [];
+        state.rolledList = [];
+        state.mistakesList = [];
+    }
   },
 });
 
@@ -58,6 +63,7 @@ export const {
   toggleMistake,
   generateNewListFromMistakes,
   addIndividualNum,
+  resetAllLists
 } = listsSlice.actions;
 
 export const selectMainList = (state) => state.lists.mainList;
