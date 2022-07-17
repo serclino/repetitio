@@ -12,7 +12,7 @@ const RollPage = () => {
   const mainList = useSelector(selectMainList);
   return (
     <>
-      <BackButton />
+      <BackButton path='/overview' />
       <div className="page">RollPage</div>
       {mainList.length > 0 ? <RollButton /> : null}
       <JustRolled />

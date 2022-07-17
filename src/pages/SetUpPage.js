@@ -5,7 +5,7 @@ import { BackButton } from "../components/BackButton";
 const SetUpPage = () => {
   return (
     <>
-      <BackButton />
+      <BackButton path='/' />
       <div className="page">SetUpPage</div>
       <ListGenerator />
     </>
