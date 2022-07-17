@@ -1,7 +1,7 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
-import { Info } from "../components/Info";
+/* import { Info } from "../components/Info"; */
 
 const HomePage = () => {
   const history = useHistory();

@@ -22,9 +22,7 @@ const DashboardPage = () => {
     <>
       {isPopupOpen ? <PopUp setIsPopupOpen={setIsPopupOpen} /> : null}
       <div className="page">DashboardPage</div>
-      <a href="#" onClick={(e) => openPopUp(e)}>
-        Create a new list
-      </a>
+      <button onClick={(e) => openPopUp(e)}>Create a new list</button>
       <Singleton />
       {mainList.length > 0 ? <RollButton /> : null}
       <JustRolled />

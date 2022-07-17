@@ -4,7 +4,7 @@ import { selectMainList } from "../features/listsSlice";
 import { Counter } from "../components/Counter";
 import { JustRolled } from "../components/JustRolled";
 import { RollButton } from "../components/RollButton";
-import { Info } from "../components/Info";
+/* import { Info } from "../components/Info"; */
 import { NextSteps } from "../components/NextSteps";
 import { BackButton } from "../components/BackButton";
 
