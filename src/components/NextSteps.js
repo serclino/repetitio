@@ -26,7 +26,12 @@ export const NextSteps = () => {
       </button>
       <br />
       {mistakesList.length > 0 ? (
-        <button onClick={() => dispatch(generateNewListFromMistakes())}>
+        <button
+          onClick={() => {
+            dispatch(generateNewListFromMistakes());
+            history.push("/overview");
+          }}
+        >
           Create a new list from mistakes.
         </button>
       ) : null}
