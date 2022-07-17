@@ -40,6 +40,13 @@ const listsSlice = createSlice({
       state.rolledList = [];
       state.mistakesList = [];
     },
+    addIndividualNum: (state, action) => {
+      const { individualNum } = action.payload;
+      state.mainList.push(individualNum);
+      state.mainList.sort(function (a, b) {
+        return a - b;
+      });
+    },
   },
 });
 
@@ -50,6 +57,7 @@ export const {
   rollDice,
   toggleMistake,
   generateNewListFromMistakes,
+  addIndividualNum,
 } = listsSlice.actions;
 
 export const selectMainList = (state) => state.lists.mainList;

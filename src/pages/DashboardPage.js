@@ -14,6 +14,7 @@ const DashboardPage = () => {
   return (
     <>
       <div className="page">DashboardPage</div>
+      <Singleton />
       {mainList.length > 0 ? <RollButton /> : null}
       <JustRolled />
       <Counter />
