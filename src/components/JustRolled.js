@@ -12,15 +12,17 @@ export const JustRolled = () => {
   const mistakesList = useSelector(selectMistakesList);
   const rolledNum = rolledList[rolledList.length - 1];
 
+  const btn = (
+    <button onClick={() => dispatch(toggleMistake({ rolledNum }))}>
+      {!mistakesList.includes(rolledNum) ? "Mark Mistake" : "Unmark Mistake"}
+    </button>
+  );
+
   return (
     <>
       <div className="component">JustRolled</div>
       <p>{rolledNum}</p>
-      <button onClick={() => dispatch(toggleMistake({ rolledNum }))}>
-        {!mistakesList.includes(rolledNum)
-          ? "Mark Mistake"
-          : "Unmark Mistake"}
-      </button>
+      {rolledList.length > 0 ? btn : null}
     </>
   );
 };

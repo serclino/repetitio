@@ -14,6 +14,7 @@ export const NextSteps = () => {
   return (
     <>
       <div className="component">NextSteps</div>
+      <h4>Kudos! 🥳 Your list is empty. What's next?</h4>
       <button onClick={() => history.push("/setup")}>Create a new list.</button>
       <br />
       {mistakesList.length > 0 ? (
