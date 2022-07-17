@@ -1,4 +1,6 @@
 import React from "react";
+import { useSelector } from "react-redux";
+import { selectMainList } from "../features/listsSlice";
 import { Counter } from "../components/Counter";
 import { JustRolled } from "../components/JustRolled";
 import { RollButton } from "../components/RollButton";
@@ -6,13 +8,14 @@ import { Info } from "../components/Info";
 import { NextSteps } from "../components/NextSteps";
 
 const RollPage = () => {
+  const mainList = useSelector(selectMainList);
   return (
     <>
       <div className="page">RollPage</div>
-      <RollButton />
+      {mainList.length > 0 ? <RollButton /> : null}
       <JustRolled />
       <Counter />
-      <NextSteps />
+      {mainList.length === 0 ? <NextSteps /> : null}
     </>
   );
 };
