@@ -6,11 +6,13 @@ import { JustRolled } from "../components/JustRolled";
 import { RollButton } from "../components/RollButton";
 import { Info } from "../components/Info";
 import { NextSteps } from "../components/NextSteps";
+import { BackButton } from "../components/BackButton";
 
 const RollPage = () => {
   const mainList = useSelector(selectMainList);
   return (
     <>
+      <BackButton />
       <div className="page">RollPage</div>
       {mainList.length > 0 ? <RollButton /> : null}
       <JustRolled />
