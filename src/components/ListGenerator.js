@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { generateMainList } from "../features/listsSlice";
-import { displayAlert } from "../features/alertSlice";
+import { displayAlert, removeAlert } from "../features/alertSlice";
 
 export const ListGenerator = () => {
   const dispatch = useDispatch();
@@ -22,6 +22,7 @@ export const ListGenerator = () => {
       return;
     }
     dispatch(generateMainList({ firstNum, lastNum }));
+    dispatch(removeAlert()); // unnecessary line of code - otherwise Alert (if it is present) will persist to the next screen
     history.push("/overview");
   };
 

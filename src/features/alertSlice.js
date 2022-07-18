@@ -4,6 +4,7 @@ const initialState = {
   showAlert: false,
   type: "",
   msg: "",
+  listIsCreatedForTheFirstTime: true,
 };
 
 const alertSlice = createSlice({
@@ -18,14 +19,17 @@ const alertSlice = createSlice({
     },
     removeAlert: (state, action) => {
       state.showAlert = false;
-      state.type = '';
-      state.msg = '';
+      state.type = "";
+      state.msg = "";
+    },
+    toggle: (state, action) => {
+      state.listIsCreatedForTheFirstTime = !state.listIsCreatedForTheFirstTime;
     },
   },
 });
 
 export default alertSlice.reducer;
 
-export const { displayAlert, removeAlert } = alertSlice.actions;
+export const { displayAlert, removeAlert, toggle } = alertSlice.actions;
 
 export const selectAlert = (state) => state.alert;

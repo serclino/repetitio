@@ -19,6 +19,15 @@ export const NextSteps = () => {
       <button
         onClick={() => {
           dispatch(resetAllLists());
+          history.push("/");
+        }}
+      >
+        Back to Home.
+      </button>
+      <br />
+      <button
+        onClick={() => {
+          dispatch(resetAllLists());
           history.push("/setup");
         }}
       >

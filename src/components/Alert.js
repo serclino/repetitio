@@ -11,10 +11,10 @@ export const Alert = () => {
       dispatch(removeAlert());
     }, 4000);
     return () => clearTimeout(timeout);
-  });
+  }, [dispatch]);
+
   return (
     <>
-      <div className="component">Alert</div>
       <p className={`alert alert-${type}`}>{msg}</p>
     </>
   );
