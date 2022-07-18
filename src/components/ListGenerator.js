@@ -22,7 +22,12 @@ export const ListGenerator = () => {
       return;
     }
     dispatch(generateMainList({ firstNum, lastNum }));
-    dispatch(removeAlert()); // unnecessary line of code - otherwise Alert (if it is present) will persist to the next screen
+    dispatch(
+      displayAlert({
+        type: "success",
+        msg: "List has been successfully created!",
+      })
+    );
     history.push("/overview");
   };
 

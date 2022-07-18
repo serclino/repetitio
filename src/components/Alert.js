@@ -9,7 +9,7 @@ export const Alert = () => {
   useEffect(() => {
     const timeout = setTimeout(() => {
       dispatch(removeAlert());
-    }, 4000);
+    }, 3500);
     return () => clearTimeout(timeout);
   }, [dispatch]);
 

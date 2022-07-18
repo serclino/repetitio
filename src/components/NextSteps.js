@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
+import { displayAlert, removeAlert } from "../features/alertSlice";
 import {
   generateNewListFromMistakes,
   resetAllLists,
@@ -28,6 +29,9 @@ export const NextSteps = () => {
       <button
         onClick={() => {
           dispatch(resetAllLists());
+          dispatch(removeAlert()); // to handle very rare situation
+          // in which alert state has some msg
+          // and this msg would appear in the /setup page
           history.push("/setup");
         }}
       >
@@ -38,6 +42,12 @@ export const NextSteps = () => {
         <button
           onClick={() => {
             dispatch(generateNewListFromMistakes());
+            dispatch(
+              displayAlert({
+                type: "success",
+                msg: "List has been successfully created!",
+              })
+            );
             history.push("/overview");
           }}
         >
