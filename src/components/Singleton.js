@@ -27,6 +27,15 @@ export const Singleton = () => {
       );
       return;
     }
+    if (individualNum === "") {
+      dispatch(
+        displayAlert({
+          type: "danger",
+          msg: "Please enter valid number value.",
+        })
+      );
+      return;
+    }
     dispatch(addIndividualNum({ individualNum }));
     dispatch(
       displayAlert({
