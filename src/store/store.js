@@ -1,8 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
 import listsReducer from "../features/listsSlice";
+import alertSlice from "../features/alertSlice";
 
 export default configureStore({
   reducer: {
-    lists: listsReducer,
+    alert: alertSlice,
+    lists: listsReducer
   },
 });

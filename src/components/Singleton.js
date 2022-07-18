@@ -5,9 +5,10 @@ import {
   selectMainList,
   selectRolledList,
 } from "../features/listsSlice";
+import { displayAlert } from "../features/alertSlice";
 
 export const Singleton = () => {
-  const [individualNum, setIndividualNum] = useState('');
+  const [individualNum, setIndividualNum] = useState("");
   const dispatch = useDispatch();
   const mainList = useSelector(selectMainList);
   const rolledList = useSelector(selectRolledList);
@@ -18,10 +19,22 @@ export const Singleton = () => {
       mainList.includes(individualNum) ||
       rolledList.includes(individualNum)
     ) {
-      return console.log("error. this number is already in the list.");
+      dispatch(
+        displayAlert({
+          type: "danger",
+          msg: `Number ${individualNum} is already in the list.`,
+        })
+      );
+      return;
     }
     dispatch(addIndividualNum({ individualNum }));
-    setIndividualNum('');
+    dispatch(
+      displayAlert({
+        type: "success",
+        msg: `Number ${individualNum} has been added to the list.`,
+      })
+    );
+    setIndividualNum("");
   };
 
   const form = (

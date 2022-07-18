@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { generateMainList } from "../features/listsSlice";
+import { displayAlert } from "../features/alertSlice";
 
 export const ListGenerator = () => {
   const dispatch = useDispatch();
@@ -12,7 +13,13 @@ export const ListGenerator = () => {
   const generateNewList = (e) => {
     e.preventDefault();
     if (firstNum > lastNum) {
-      return console.log("error: lastNum must be bigger than firstNum");
+      dispatch(
+        displayAlert({
+          type: "danger",
+          msg: "First number must be smaller than last number.",
+        })
+      );
+      return;
     }
     dispatch(generateMainList({ firstNum, lastNum }));
     history.push("/overview");

@@ -25,6 +25,19 @@
     margin: 0 auto;
     background-color: yellow;
     height: 30vh;
+}
 
-    
+.alert {
+    width: fit-content;
+    padding: 10px 20px;
+    color: white;
+    border-radius: 10px;
+}
+
+.alert-danger {
+    background-color: red;
+}
+
+.alert-success {
+    background-color: green;
 }
