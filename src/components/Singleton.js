@@ -15,10 +15,19 @@ export const Singleton = () => {
 
   const addNumberToTheList = (e) => {
     e.preventDefault();
-    if (
-      mainList.includes(individualNum) ||
-      rolledList.includes(individualNum)
-    ) {
+    // to check if individual number is already in the lists:
+    let isIndNumInTheList = false;
+    mainList.forEach((item) => {
+      if (item.number === individualNum) {
+        isIndNumInTheList = true;
+      }
+    });
+    rolledList.forEach((item) => {
+      if (item.number === individualNum) {
+        isIndNumInTheList = true;
+      }
+    });
+    if (isIndNumInTheList === true) {
       dispatch(
         displayAlert({
           type: "danger",
@@ -27,6 +36,7 @@ export const Singleton = () => {
       );
       return;
     }
+    // to check if user typed in correct value (number):
     if (individualNum === "") {
       dispatch(
         displayAlert({
@@ -36,6 +46,7 @@ export const Singleton = () => {
       );
       return;
     }
+    // if everything is ok, finally dispatch individual number to the store:
     dispatch(addIndividualNum({ individualNum }));
     dispatch(
       displayAlert({
