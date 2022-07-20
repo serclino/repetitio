@@ -10,7 +10,7 @@ export const JustRolled = () => {
   const dispatch = useDispatch();
   const rolledList = useSelector(selectRolledList);
   const mistakesList = useSelector(selectMistakesList);
-  const rolledNum = rolledList[0];
+  const rolledNum = rolledList[rolledList.length - 1];
 
   const btn = (
     <button onClick={() => dispatch(toggleMistake({ rolledNum }))}>
