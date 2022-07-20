@@ -11,47 +11,64 @@ const listsSlice = createSlice({
   initialState,
   reducers: {
     generateMainList: (state, action) => {
+      // FIXED
       state.mainList = [];
       const { firstNum, lastNum } = action.payload;
       for (let i = firstNum; i <= lastNum; i++) {
-        state.mainList.push(i);
+        state.mainList.push({
+          number: i,
+          css: "gray-bg",
+        });
       }
       state.rolledList = [];
       state.mistakesList = [];
     },
     rollDice: (state, action) => {
+      // FIXED
       const randomNum = Math.floor(Math.random() * state.mainList.length);
       const targetNum = state.mainList[randomNum];
-      state.mainList = state.mainList.filter((n) => n !== targetNum);
+      state.mainList = state.mainList.filter(
+        (n) => n.number !== targetNum.number
+      );
       state.rolledList.push(targetNum);
     },
     toggleMistake: (state, action) => {
+      // FIXED
       const { rolledNum } = action.payload;
-      if (!state.mistakesList.includes(rolledNum)) {
-        state.mistakesList.push(rolledNum);
-      } else {
+      if (
+        state.mistakesList[state.mistakesList.length - 1]?.number === rolledNum
+      ) {
         state.mistakesList.pop();
+      } else {
+        console.log("push");
+        state.mistakesList.push(state.rolledList[state.rolledList.length - 1]);
       }
     },
     generateNewListFromMistakes: (state, action) => {
+      // FIXED
       state.mainList = state.mistakesList.sort(function (a, b) {
-        return a - b;
+        return a.number - b.number;
       });
       state.rolledList = [];
       state.mistakesList = [];
     },
     addIndividualNum: (state, action) => {
+      // FIXED
       const { individualNum } = action.payload;
-      state.mainList.push(individualNum);
+      state.mainList.push({
+        number: individualNum,
+        css: "white-bg",
+      });
       state.mainList.sort(function (a, b) {
-        return a - b;
+        return a.number - b.number;
       });
     },
     resetAllLists: (state, action) => {
-        state.mainList = [];
-        state.rolledList = [];
-        state.mistakesList = [];
-    }
+      // FIXED
+      state.mainList = [];
+      state.rolledList = [];
+      state.mistakesList = [];
+    },
   },
 });
 
@@ -63,7 +80,7 @@ export const {
   toggleMistake,
   generateNewListFromMistakes,
   addIndividualNum,
-  resetAllLists
+  resetAllLists,
 } = listsSlice.actions;
 
 export const selectMainList = (state) => state.lists.mainList;

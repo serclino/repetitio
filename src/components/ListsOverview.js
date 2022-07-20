@@ -12,15 +12,21 @@ export const ListsOverview = () => {
       <div className="component">ListsOverview</div>
       <h5>Main List:</h5>
       {mainList.map((num, id) => (
-        <p key={id}>{num}</p>
+        <p className={`numero ${num.css}`} key={id}>
+          {num.number}
+        </p>
       ))}
       <h5>Rolled List:</h5>
-      {rolledList.map((num,id) => (
-        <p key={id}>{num}</p>
+      {rolledList.map((num, id) => (
+        <p className={`numero ${num.css}`} key={id}>
+          {num.number}
+        </p>
       ))}
       <h5>Mistakes List:</h5>
       {mistakesList.map((num, id) => (
-        <p key={id}>{num}</p>
+        <p className={`numero ${num.css}`} key={id}>
+          {num.number}
+        </p>
       ))}
     </>
   );

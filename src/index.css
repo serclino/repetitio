@@ -41,3 +41,18 @@
 .alert-success {
     background-color: green;
 }
+
+.numero {
+    border-radius: 10px;
+    width: 59px;
+    height: 32px;
+}
+
+.gray-bg {
+    background-color: rgba(200, 209, 210, 0.25);
+}
+
+.white-bg {
+    background-color: transparent;
+    border: solid 1.5px blue;
+}
