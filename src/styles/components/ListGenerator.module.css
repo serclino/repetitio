@@ -1,7 +1,50 @@
-.setupInput {
-    max-width: 159.5px;
-    height: 49px;
-    border-radius: 10px;
-    border: solid 1px #c8d1d2;
-    background-color: #fff;
+.generator {
+  height: calc(100% - 48px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.generator > input {
+  background-color: #00b578;
+  color: #fff;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.41;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px 0 rgba(88, 94, 125, 0.08);
+  padding: 16px 0px;
+}
+
+.inputs {
+  display: flex;
+}
+
+.left {
+  margin-right: 8px;
+}
+
+.singleInput {
+  width: 50%;
+  text-align: center;
+}
+
+.singleInput > label {
+  font-size: 14px;
+  color: #0f172a;
+  line-height: 1.57;
+}
+
+.inputBox {
+  border-radius: 10px;
+  border: solid 1px #c8d1d2;
+  height: 49px;
+  width: 100%;
+  margin-top: 8px;
+  text-align: center;
+  color: #0f172a;
+}
+
+.inputBox::placeholder {
+  color: rgba(81, 82, 89, 0.5);
 }

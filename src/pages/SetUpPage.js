@@ -11,7 +11,7 @@ const SetUpPage = () => {
   const { showAlert } = useSelector(selectAlert);
 
   return (
-    <>
+    <section className={styles.page}>
       <div className={styles.top}>
         <BackButton path="/" />
         <button className={styles.icon}>
@@ -20,7 +20,7 @@ const SetUpPage = () => {
       </div>
       <ListGenerator />
       {showAlert && <Alert />}
-    </>
+    </section>
   );
 };
 
