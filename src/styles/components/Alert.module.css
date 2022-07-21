@@ -1,0 +1,33 @@
+.alert {
+    box-shadow: 0 8px 20px 0 rgba(88, 94, 125, 0.08);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    padding: 24px;
+    display: flex;
+    z-index: 1;
+}
+
+.alert > img {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+}
+
+
+.alertDanger {
+    background-color: #fcebed;
+    color: #e03c4c;
+}
+
+.alertSuccess {
+    background-color: #dbf2ec;
+    color: #00b578;
+}
+
+.text {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.57;
+}

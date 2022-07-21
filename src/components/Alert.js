@@ -1,6 +1,10 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { removeAlert, selectAlert } from "../features/alertSlice";
+import style from "../styles/components/Alert.module.css";
+
+import checkCircle from "../resources/check-circle.svg";
+import xCircle from "../resources/x-circle.svg";
 
 export const Alert = () => {
   const dispatch = useDispatch();
@@ -14,8 +18,14 @@ export const Alert = () => {
   });
 
   return (
-    <>
-      <p className={`alert alert-${type}`}>{msg}</p>
-    </>
+    <div
+      className={`${style.alert} ${
+        type === "danger" ? style.alertDanger : style.alertSuccess
+      }`}
+    >
+      {type === "danger" && <img src={xCircle} alt="error" />}
+      {type === "success" && <img src={checkCircle} alt="success" />}
+      <p className={style.text}>{msg}</p>
+    </div>
   );
 };
