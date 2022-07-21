@@ -40,7 +40,6 @@ const listsSlice = createSlice({
       ) {
         state.mistakesList.pop();
       } else {
-        console.log("push");
         state.mistakesList.push(state.rolledList[state.rolledList.length - 1]);
       }
     },

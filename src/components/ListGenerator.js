@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { generateMainList } from "../features/listsSlice";
-import { displayAlert, removeAlert } from "../features/alertSlice";
+import { displayAlert } from "../features/alertSlice";
+import style from '../styles/ListGenerator.module.css';
 
 export const ListGenerator = () => {
   const dispatch = useDispatch();
@@ -33,7 +34,7 @@ export const ListGenerator = () => {
 
   const form = (
     <form onSubmit={generateNewList}>
-      <label htmlFor="firstNum">First number:</label>
+      <label htmlFor="firstNum">Starting</label>
       <input
         type="number"
         name="firstNum"
@@ -43,8 +44,9 @@ export const ListGenerator = () => {
         max="200"
         value={firstNum}
         onChange={(e) => setFirstNum((prev) => Number(e.target.value))}
+        className={style.setupInput}
       />
-      <label htmlFor="lastNum">Last number:</label>
+      <label htmlFor="lastNum">Ending</label>
       <input
         type="number"
         name="lastNum"

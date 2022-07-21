@@ -11,7 +11,7 @@ export const Alert = () => {
       dispatch(removeAlert());
     }, 3000);
     return () => clearTimeout(timeout);
-  }, [dispatch]);
+  });
 
   return (
     <>
