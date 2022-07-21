@@ -18,7 +18,15 @@ const SetUpPage = () => {
           <img src={icon} alt="information" />
         </button>
       </div>
-      <ListGenerator />
+      <div className={styles.flexContainer}>
+        <article className={styles.textBox}>
+          <h1 className={styles.headline}>Create a list</h1>
+          <p className={styles.text}>
+            Pick a starting number and an ending number of your questions list.
+          </p>
+        </article>
+        <ListGenerator />
+      </div>
       {showAlert && <Alert />}
     </section>
   );

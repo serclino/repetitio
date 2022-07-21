@@ -1,8 +1,8 @@
 .generator {
-  height: calc(100% - 48px);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  height: 66.5%;
 }
 
 .generator > input {

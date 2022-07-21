@@ -6,6 +6,7 @@
 .top {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 9px;
 }
 
 .icon {
@@ -17,4 +18,30 @@
 .icon > img {
     width: 20px;
     height: 20px;
+}
+
+.flexContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: calc(100% - 57px);
+}
+
+.textBox {
+    width: 76.5%;
+}
+
+.headline {
+    color: #242928;
+    font-size: 20px;
+    line-height: 1.2;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.text {
+    color: #515259;
+    font-size: 13px;
+    font-weight: normal;
+    line-height: 1.69;
 }
