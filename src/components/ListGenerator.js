@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { generateMainList } from "../features/listsSlice";
 import { displayAlert } from "../features/alertSlice";
-import style from '../styles/ListGenerator.module.css';
+import style from '../styles/components/ListGenerator.module.css';
 
 export const ListGenerator = () => {
   const dispatch = useDispatch();

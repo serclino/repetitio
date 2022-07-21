@@ -1,0 +1,15 @@
+.top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.icon {
+    width: 48px;
+    height: 48px;
+    padding: auto;
+}
+
+.icon > img {
+    width: 20px;
+    height: 20px;
+}

@@ -4,14 +4,20 @@ import { ListGenerator } from "../components/ListGenerator";
 import { BackButton } from "../components/BackButton";
 import { Alert } from "../components/Alert";
 import { selectAlert } from "../features/alertSlice";
+import icon from "../resources/info/info-2@3x.png";
+import styles from "../styles/pages/SetUpPage.module.css";
 
 const SetUpPage = () => {
   const { showAlert } = useSelector(selectAlert);
 
   return (
     <>
-      <BackButton path="/" />
-      <div className="page">SetUpPage</div>
+      <div className={styles.top}>
+        <BackButton path="/" />
+        <button className={styles.icon}>
+          <img src={icon} alt="information" />
+        </button>
+      </div>
       <ListGenerator />
       {showAlert && <Alert />}
     </>

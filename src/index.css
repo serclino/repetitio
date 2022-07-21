@@ -9,6 +9,12 @@ html {
     font-family: 'Poppins', sans-serif;;
 }
 
+button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
 @font-face {
   font-family: 'Poppins';
   font-style: normal;
