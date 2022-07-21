@@ -48,6 +48,7 @@ export const ListGenerator = () => {
           <label htmlFor="firstNum">Starting</label>
           <br />
           <input
+            inputMode="numeric"
             type="number"
             name="firstNum"
             id="firstNum"
@@ -64,6 +65,7 @@ export const ListGenerator = () => {
           <label htmlFor="lastNum">Ending</label>
           <br />
           <input
+            inputMode="numeric"
             type="number"
             name="lastNum"
             id="lastNum"

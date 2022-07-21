@@ -48,3 +48,9 @@
 .inputBox::placeholder {
   color: rgba(81, 82, 89, 0.5);
 }
+
+.singleInput > input:focus {
+    border: solid 2px #00b578;
+    outline: 0 none;
+    caret-color: transparent;
+}

@@ -60,6 +60,7 @@ export const Singleton = () => {
   const form = (
     <form onSubmit={addNumberToTheList}>
       <input
+        inputMode="numeric"
         type="number"
         name="individualNum"
         id="individualNum"
