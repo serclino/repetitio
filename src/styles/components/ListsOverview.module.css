@@ -1,0 +1,22 @@
+.topOverview {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.topOverview > img {
+  width: 11.6px;
+  height: 6px;
+}
+
+.topOverview > h1 {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.57;
+}
+
+.topOverview > h1 > span {
+    color: #6e7782
+}
+
+/* šipce přidat padding! */

@@ -30,7 +30,7 @@ const OverviewPage = () => {
         <article className={style.textBox}>
           <h1 className={style.headline}>Your list is ready</h1>
           <p className={style.text}>
-            You can add another number that in not in the line or just start
+            You can add another number that is not in the line or just start
             your revision.
           </p>
         </article>

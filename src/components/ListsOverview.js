@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { selectMainList, selectRolledList, selectMistakesList } from "../features/listsSlice";
+import style from '../styles/components/ListsOverview.module.css';
 import toggleArrow from "../resources/toggle-arrow/fi-rr-angle-small-right@3x.png";
 
 export const ListsOverview = () => {
@@ -10,20 +11,34 @@ export const ListsOverview = () => {
 
   return (
     <>
-      <div className="component">ListsOverview</div>
-      <h5>Main List:</h5>
+      <div className={style.topOverview}>
+        <h1>
+          Remaining <span>{`(${mainList.length})`}</span>
+        </h1>
+        <img src={toggleArrow} alt="toggle arrow" />
+      </div>
       {mainList.map((num, id) => (
         <p className={`numero ${num.css}`} key={id}>
           {num.number}
         </p>
       ))}
-      <h5>Rolled List:</h5>
+      <div className={style.topOverview}>
+        <h1>
+          Done <span>{`(${rolledList.length})`}</span>
+        </h1>
+        <img src={toggleArrow} alt="toggle arrow" />
+      </div>
       {rolledList.map((num, id) => (
         <p className={`numero ${num.css}`} key={id}>
           {num.number}
         </p>
       ))}
-      <h5>Mistakes List:</h5>
+      <div className={style.topOverview}>
+        <h1>
+          Mistakes <span>{`(${mistakesList.length})`}</span>
+        </h1>
+        <img src={toggleArrow} alt="toggle arrow" />
+      </div>
       {mistakesList.map((num, id) => (
         <p className={`numero ${num.css}`} key={id}>
           {num.number}
