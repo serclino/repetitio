@@ -1,0 +1,37 @@
+.text {
+  color: #515259;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 1.69;
+  margin-bottom: 8px;
+}
+
+.formular {
+  display: flex;
+}
+
+.add {
+  width: 49px;
+  height: 49px;
+  border-radius: 10px;
+  background-color: #dbf2ec;
+}
+
+.formInput {
+  border: solid 1px #c8d1d2;
+  border-radius: 10px;
+  margin-right: 8px;
+  flex-grow: 1;
+  height: 49px;
+  padding-left: 16px;
+}
+
+.formInput::placeholder {
+  color: rgba(81, 82, 89, 0.5);
+}
+
+.formInput:focus {
+  border: solid 2px #00b578;
+  outline: 0 none;
+  caret-color: transparent;
+}

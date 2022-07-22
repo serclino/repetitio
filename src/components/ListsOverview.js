@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { selectMainList, selectRolledList, selectMistakesList } from "../features/listsSlice";
+import toggleArrow from "../resources/toggle-arrow/fi-rr-angle-small-right@3x.png";
 
 export const ListsOverview = () => {
   const mainList = useSelector(selectMainList);

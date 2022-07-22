@@ -6,6 +6,9 @@ import {
   selectRolledList,
 } from "../features/listsSlice";
 import { displayAlert } from "../features/alertSlice";
+import style from "../styles/components/Singleton.module.css";
+
+import plus from "../resources/plus.svg";
 
 export const Singleton = () => {
   const [individualNum, setIndividualNum] = useState("");
@@ -58,7 +61,7 @@ export const Singleton = () => {
   };
 
   const form = (
-    <form onSubmit={addNumberToTheList}>
+    <form onSubmit={addNumberToTheList} className={style.formular}>
       <input
         inputMode="numeric"
         type="number"
@@ -66,17 +69,20 @@ export const Singleton = () => {
         id="individualNum"
         min="1"
         max="200"
+        placeholder="1"
         value={individualNum}
         onChange={(e) => setIndividualNum((prev) => Number(e.target.value))}
+        className={style.formInput}
       />
-      <input type="submit" value="+" />
+      <button className={style.add} onClick={(e) => addNumberToTheList(e)}>
+        <img src={plus} alt="add" />
+      </button>
     </form>
   );
 
   return (
     <>
-      <div className="component">Singleton</div>
-      <h5>Add Individual number to the List:</h5>
+      <p className={style.text}>Add a number</p>
       {form}
     </>
   );

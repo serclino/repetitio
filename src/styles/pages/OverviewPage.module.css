@@ -1,0 +1,74 @@
+.page {
+  /*   padding: 54px 24px 50px 24px; */
+  height: 100%;
+}
+
+.whiteBg {
+  background-color: #fff;
+  padding: 54px 24px 32px 24px;
+  box-shadow: 0 8px 20px 0 rgba(88, 94, 125, 0.08);
+}
+
+.grayBg {
+  padding: 52px 24px 50px 24px;
+}
+
+/* whitBg part */
+
+.icon {
+  float: right;
+  width: 20px;
+  height: 20px;
+}
+
+.textBox {
+  width: 76.5%;
+  margin-top: 44px; /* recalculate later after adding logo */
+}
+
+.headline {
+  color: #242928;
+  font-size: 20px;
+  line-height: 1.2;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.text {
+  color: #515259;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 1.69;
+}
+
+.mistakeBox {
+  width: 76.5%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 14px;
+  margin-bottom: 32px;
+}
+
+.mistakeBox > p {
+  margin-right: 4px;
+}
+
+.mistakeBox > button {
+  color: #00b578;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.62;
+}
+
+/* grayBg part */
+.grayBg > button {
+  color: #fff;
+  line-height: 1.41;
+  font-weight: 600;
+  font-size: 17px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px 0 rgba(88, 94, 125, 0.08);
+  background-color: #00b578;
+  padding: 16px 0;
+  width: 100%;
+}
