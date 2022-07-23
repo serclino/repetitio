@@ -8,6 +8,7 @@ import { PopUp } from "../components/PopUp";
 import { Alert } from "../components/Alert";
 import { selectAlert } from "../features/alertSlice";
 import infoIcon from "../resources/info/info-2@3x.png";
+import logo from "../resources/logo/logo@3x.png";
 
 import style from "../styles/pages/OverviewPage.module.css";
 
@@ -26,7 +27,7 @@ const OverviewPage = () => {
       {isPopupOpen ? <PopUp setIsPopupOpen={setIsPopupOpen} /> : null}
       {showAlert && <Alert />}
       <div className={style.whiteBg}>
-        <img className={style.icon} src={infoIcon} alt="information" />
+        <img className={style.icon} src={logo} alt="logo" />
         <article className={style.textBox}>
           <h1 className={style.headline}>Your list is ready</h1>
           <p className={style.text}>
