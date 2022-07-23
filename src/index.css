@@ -32,6 +32,30 @@ input {
   cursor: pointer;
 }
 
+/* Styling numbers in the list.
+  This must be done here, because
+  CSS class names are generated from the store. */
+
+.numero {
+  border-radius: 10px;
+  width: 59px;
+  height: 32px;
+  /* to position number in the center of the div */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gray-bg {
+  background-color: rgba(200, 209, 210, 0.25);
+}
+
+.white-bg {
+  background-color: transparent;
+  border: solid 1.5px #c8d1d2;
+}
+
+
 /* --- FONTS --- */
 @font-face {
   font-family: "Poppins";
@@ -110,34 +134,4 @@ input {
   margin: 0 auto;
   background-color: yellow;
   height: 30vh;
-}
-
-/* .alert {
-  width: fit-content;
-  padding: 10px 20px;
-  color: white;
-  border-radius: 10px;
-}
-
-.alert-danger {
-  background-color: red;
-}
-
-.alert-success {
-  background-color: green;
-} */
-
-.numero {
-  border-radius: 10px;
-  width: 59px;
-  height: 32px;
-}
-
-.gray-bg {
-  background-color: rgba(200, 209, 210, 0.25);
-}
-
-.white-bg {
-  background-color: transparent;
-  border: solid 1.5px blue;
 }

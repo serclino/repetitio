@@ -35,7 +35,7 @@ export const ListGenerator = () => {
     dispatch(
       displayAlert({
         type: "success",
-        msg: "List has been successfully created!",
+        msg: "Hooray! You created list.",
       })
     );
     history.push("/overview");

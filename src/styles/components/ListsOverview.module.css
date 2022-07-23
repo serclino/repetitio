@@ -4,9 +4,21 @@
   align-items: center;
 }
 
-.topOverview > img {
+.arrowBtn {
+  width: 48px;
+  height: 48px;
+  padding: 21px 18.2px;
+  margin-right: -18.2px;
+}
+
+.arrowDown {
+  transform: rotate(180deg);
+}
+
+.arrowBtn > img {
   width: 11.6px;
   height: 6px;
+  transform: translateY(-6px);
 }
 
 .topOverview > h1 {
@@ -16,7 +28,13 @@
 }
 
 .topOverview > h1 > span {
-    color: #6e7782
+  color: #6e7782;
 }
 
-/* šipce přidat padding! */
+.listedNums {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 59px);
+  justify-content: space-between;
+  grid-gap: 8px;
+  margin-bottom: 32px;
+}

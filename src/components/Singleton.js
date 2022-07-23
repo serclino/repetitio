@@ -49,6 +49,16 @@ export const Singleton = () => {
       );
       return;
     }
+    // to check if user typed number in desired range:
+    if (individualNum < 1 || individualNum > 200) {
+      dispatch(
+        displayAlert({
+          type: "danger",
+          msg: "The number must be in range from 1 to 200.",
+        })
+      );
+      return;
+    }
     // if everything is ok, finally dispatch individual number to the store:
     dispatch(addIndividualNum({ individualNum }));
     dispatch(
