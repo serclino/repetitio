@@ -4,12 +4,13 @@ import { useSelector } from "react-redux";
 import { Singleton } from "../components/Singleton";
 import { ListsOverview } from "../components/ListsOverview";
 
+
 import { PopUp } from "../components/PopUp";
 import { Alert } from "../components/Alert";
 import { selectAlert } from "../features/alertSlice";
-import infoIcon from "../resources/info/info-2@3x.png";
-import logo from "../resources/logo/logo@3x.png";
 
+import logo from "../resources/logo/logo@3x.png";
+import backArrow from "../resources/back-arrow/arrow-left@3x.png";
 import style from "../styles/pages/OverviewPage.module.css";
 
 const OverviewPage = () => {
@@ -27,7 +28,10 @@ const OverviewPage = () => {
       {isPopupOpen ? <PopUp setIsPopupOpen={setIsPopupOpen} /> : null}
       {showAlert && <Alert />}
       <div className={style.whiteBg}>
-        <img className={style.icon} src={logo} alt="logo" />
+        <div className={style.top}>
+          <button onClick={(e) => openPopUp(e)} className={style.backBtn}><img src={backArrow} alt="back arrow" /> Create a new list</button>
+          <img className={style.icon} src={logo} alt="logo" />
+        </div>
         <article className={style.textBox}>
           <h1 className={style.headline}>Your list is ready</h1>
           <p className={style.text}>
@@ -35,13 +39,8 @@ const OverviewPage = () => {
             your revision.
           </p>
         </article>
-        <article className={style.mistakeBox}>
-          <p className={style.text}>Did you mistake?</p>
-          <button onClick={(e) => openPopUp(e)}>Create a new list</button>
-        </article>
         <Singleton />
       </div>
-
       <div className={style.grayBg}>
         <ListsOverview />
         <button onClick={() => history.push("/roll")}>Study!</button>

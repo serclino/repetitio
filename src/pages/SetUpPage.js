@@ -13,7 +13,7 @@ const SetUpPage = () => {
   return (
     <section className={styles.page}>
       <div className={styles.top}>
-        <BackButton path="/" />
+        <BackButton path="/" text='Back' />
         <button className={styles.icon}>
           <img src={icon} alt="information" />
         </button>

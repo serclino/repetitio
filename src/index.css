@@ -15,6 +15,10 @@ input::-webkit-inner-spin-button {
 input[type=number] {
   -moz-appearance: textfield;
 }
+/* hides scrollbar in Google Chrome */
+::-webkit-scrollbar {
+    display: none;
+}
 
 html {
   background-color: #f4f6f6;

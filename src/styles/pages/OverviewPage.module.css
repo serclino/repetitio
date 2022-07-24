@@ -1,6 +1,6 @@
 .page {
-  /*   padding: 54px 24px 50px 24px; */
   height: 100%;
+  overflow: hidden;
 }
 
 .whiteBg {
@@ -10,21 +10,30 @@
 }
 
 .grayBg {
-  padding: 52px 24px 50px 24px;
+  padding: 32px 24px 50px 24px;
   background-color: #f4f6f6;
+    margin-top: 20px;
+    height: 60vh;
+    overflow: scroll;
 }
 
 /* whitBg part */
 
+.top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .icon {
-  float: right;
   width: 23.7px;
   height: 27.2px;
 }
 
 .textBox {
   width: 76.5%;
-  margin-top: 45.6px; /* recalculate later after adding logo */
+  margin-top: 22px;
+  margin-bottom: 32px;
 }
 
 .headline {
@@ -42,25 +51,6 @@
   line-height: 1.69;
 }
 
-.mistakeBox {
-  width: 76.5%;
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: 14px;
-  margin-bottom: 32px;
-}
-
-.mistakeBox > p {
-  margin-right: 4px;
-}
-
-.mistakeBox > button {
-  color: #00b578;
-  font-size: 13px;
-  font-weight: 600;
-  line-height: 1.62;
-}
-
 /* grayBg part */
 .grayBg > button {
   color: #fff;
@@ -71,5 +61,24 @@
   box-shadow: 0 8px 20px 0 rgba(88, 94, 125, 0.08);
   background-color: #00b578;
   padding: 16px 0;
-  width: 100%;
+  position: absolute;
+  bottom: 50px;
+  width: calc(100% - 48px);
+}
+
+/* back btn with text */
+.backBtn {
+  color: #00b578;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.57;
+  padding: 13.02px 0;
+}
+
+.backBtn > img {
+  width: 14px;
+  height: 14px;
+
+  position: relative;
+  top: 2px;
 }
