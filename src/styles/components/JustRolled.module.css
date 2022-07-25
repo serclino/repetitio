@@ -1,0 +1,43 @@
+.justRolled {
+  text-align: center;
+}
+
+.text {
+  font-size: 14px;
+
+  line-height: 1.57;
+
+  color: #6e7782;
+}
+
+.bigNum {
+  font-family: "Roboto Mono";
+  font-size: 128px;
+  font-weight: 500;
+  line-height: 1.32;
+  color: #242928;
+  margin-top: -20px;
+  margin-bottom: -10px;
+}
+
+.btn {
+  font-size: 14px;
+  font-weight: 600;
+
+  line-height: 1.79;
+
+  color: #515259;
+}
+
+.btn > div {
+  display: flex;
+}
+
+.btn > div > p {
+  margin-right: 7px;
+}
+
+.unmark {
+  position: relative;
+  left: -10px;
+}

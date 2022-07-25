@@ -1,0 +1,15 @@
+.page {
+  height: 100%;
+  padding: 54px 24px 50px 24px;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top > img {
+  width: 23.7px;
+  height: 27.2px px;
+}

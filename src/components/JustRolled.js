@@ -5,6 +5,10 @@ import {
   selectMistakesList,
   toggleMistake,
 } from "../features/listsSlice";
+import style from "../styles/components/JustRolled.module.css";
+
+import markMistake from "../resources/markMistake.svg";
+import unmarkMistake from "../resources/unmarkMistake.svg";
 
 export const JustRolled = () => {
   const dispatch = useDispatch();
@@ -13,18 +17,27 @@ export const JustRolled = () => {
   const rolledNum = rolledList[rolledList.length - 1]?.number;
 
   const btn = (
-    <button onClick={() => dispatch(toggleMistake({ rolledNum }))}>
-      {mistakesList[mistakesList.length - 1]?.number !== rolledNum
-        ? "Mark Mistake"
-        : "Unmark Mistake"}
+    <button
+      className={style.btn}
+      onClick={() => dispatch(toggleMistake({ rolledNum }))}
+    >
+      {mistakesList[mistakesList.length - 1]?.number !== rolledNum ? (
+        <div>
+          <p>Mark Mistake</p> <img src={markMistake} alt="mark mistake" />
+        </div>
+      ) : (
+        <div className={style.unmark}>
+          <p>Unmark Mistake</p> <img src={unmarkMistake} alt="unmark mistake" />
+        </div>
+      )}
     </button>
   );
 
   return (
-    <>
-      <div className="component">JustRolled</div>
-      <p>{rolledNum}</p>
+    <section className={style.justRolled}>
+      <p className={style.text}>Rolled question</p>
+      <h1 className={style.bigNum}>{rolledNum}</h1>
       {rolledList.length > 0 ? btn : null}
-    </>
+    </section>
   );
 };
