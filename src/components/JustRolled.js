@@ -35,9 +35,13 @@ export const JustRolled = () => {
 
   return (
     <section className={style.justRolled}>
-      <p className={style.text}>Rolled question</p>
+      {rolledList.length > 0 ? (
+        <p className={style.text}>Rolled question</p>
+      ) : (
+        <p className={style.letsRoll}>Let's roll!</p>
+      )}
       <h1 className={style.bigNum}>{rolledNum}</h1>
-      {rolledList.length > 0 ? btn : null}
+      {rolledList.length > 0 && btn}
     </section>
   );
 };

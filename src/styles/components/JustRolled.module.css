@@ -5,10 +5,15 @@
 
 .text {
   font-size: 14px;
-
   line-height: 1.57;
-
   color: #6e7782;
+}
+
+.letsRoll {
+    font-size: 14px;
+  line-height: 1.57;
+  color: #6e7782;
+  margin-bottom: 50%;
 }
 
 .bigNum {
