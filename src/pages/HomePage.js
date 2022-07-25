@@ -1,19 +1,23 @@
-import React, { useState } from "react";
+import React from "react";
 import { useHistory } from "react-router-dom";
 
 import logo from "../resources/logo/logo-landing-page/Group 410@3x.png";
-import style from '../styles/pages/HomePage.module.css'
+import style from "../styles/pages/HomePage.module.css";
 
 const HomePage = () => {
   const history = useHistory();
-  const [showPopup, setShowPopup] = useState(false);
 
   return (
     <section className={style.homepage}>
       <img src={logo} alt="logo" />
       <div className={style.interactions}>
-        <button className={style.btnHow} onClick={() => setShowPopup(true)}>How it works</button>
-        <button className={style.btnStart} onClick={() => history.push("/setup")}>Create list</button>
+        <button className={style.btnHow}>How it works</button>
+        <button
+          className={style.btnStart}
+          onClick={() => history.push("/setup")}
+        >
+          Create list
+        </button>
         <p>Version 1.0.0</p>
       </div>
     </section>
