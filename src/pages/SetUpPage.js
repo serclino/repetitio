@@ -4,7 +4,8 @@ import { ListGenerator } from "../components/ListGenerator";
 import { BackButton } from "../components/BackButton";
 import { Alert } from "../components/Alert";
 import { selectAlert } from "../features/alertSlice";
-import icon from "../resources/info/info-2@3x.png";
+
+import logo from "../resources/logo/logo@3x.png";
 import styles from "../styles/pages/SetUpPage.module.css";
 
 const SetUpPage = () => {
@@ -13,10 +14,8 @@ const SetUpPage = () => {
   return (
     <section className={styles.page}>
       <div className={styles.top}>
-        <BackButton path="/" text='Back' />
-        <button className={styles.icon}>
-          <img src={icon} alt="information" />
-        </button>
+        <BackButton path="/" text="Back" />
+        <img src={logo} alt="logo" />
       </div>
       <div className={styles.flexContainer}>
         <article className={styles.textBox}>

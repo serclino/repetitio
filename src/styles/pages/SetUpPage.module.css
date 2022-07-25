@@ -6,18 +6,13 @@
 .top {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin-bottom: 9px;
 }
 
-.icon {
-    width: 48px;
-    height: 48px;
-    padding: auto;
-}
-
-.icon > img {
-    width: 20px;
-    height: 20px;
+.top > img {
+    width: 23.7px;
+    height: 27.2px;
 }
 
 .flexContainer {
