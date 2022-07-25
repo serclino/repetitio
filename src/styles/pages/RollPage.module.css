@@ -9,7 +9,21 @@
   align-items: center;
 }
 
+.bottom {
+  position: absolute;
+  bottom: 0;
+}
+
 .top > img {
   width: 23.7px;
   height: 27.2px px;
+}
+
+.backToOverview {
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.67;
+  color: #00b578;
+  margin: 24px auto 56px auto;
+  width: 100%;
 }
