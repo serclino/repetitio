@@ -4,26 +4,31 @@
   padding: 16px 0px;
   border-radius: 10px;
   box-shadow: 0 8px 20px 0 rgba(88, 94, 125, 0.08);
-  background-color: #00b578;
   font-size: 17px;
   font-weight: 600;
   line-height: 1.41;
   text-align: center;
+}
+
+.roll {
+  margin-bottom: 50px;
   color: #fff;
+  background-color: #00b578;
+}
+
+.createNew {
+  color: #fff;
+  background-color: #00b578;
   margin-bottom: 50px;
 }
 
-.lightBtn {
-  width: calc(100vw - 48px);
-  height: 56px;
-  padding: 16px 0px;
-  border-radius: 10px;
-  background-color: #dbf2ec;
-  margin-top: 24px;
-  margin-bottom: 8px;
-  font-size: 17px;
-  font-weight: 600;
-  line-height: 1.41;
-  text-align: center;
+.createFromMistakes {
   color: #00b578;
+  background-color: #dbf2ec;
+}
+
+.container {
+  height: 56px;
+  margin-bottom: 8px;
+  margin-top: 41px;
 }

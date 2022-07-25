@@ -1,6 +1,7 @@
 .counter {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 73%;
   margin: 54.5px auto 0 auto;
 }
@@ -8,9 +9,7 @@
 .box > h2 {
   font-size: 16px;
   font-weight: 600;
-
   line-height: 1.38;
-
   text-align: center;
   color: #00b578;
 }

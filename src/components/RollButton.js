@@ -21,13 +21,36 @@ export const RollButton = () => {
   return (
     <>
       {mainList.length > 0 ? (
-        <button className={style.btn} onClick={() => dispatch(rollDice())}>
+        <button
+          className={`${style.btn} ${style.roll}`}
+          onClick={() => dispatch(rollDice())}
+        >
           Roll a dice
         </button>
       ) : (
-        <>
+        <section>
+          <div className={style.container}>
+            {mistakesList.length > 0 && (
+              <button
+                className={`${style.btn} ${style.createFromMistakes}`}
+                onClick={() => {
+                  dispatch(generateNewListFromMistakes());
+                  dispatch(
+                    displayAlert({
+                      type: "success",
+                      msg: "List has been successfully created!",
+                    })
+                  );
+                  history.push("/overview");
+                }}
+              >
+                New list from mistakes
+              </button>
+            )}
+          </div>
+
           <button
-            className={style.lightBtn}
+            className={`${style.btn} ${style.createNew}`}
             onClick={() => {
               dispatch(resetAllLists());
               dispatch(removeAlert()); // to handle very rare situation
@@ -38,24 +61,7 @@ export const RollButton = () => {
           >
             Create a new list
           </button>
-          {mistakesList.length > 0 && (
-            <button
-              className={style.btn}
-              onClick={() => {
-                dispatch(generateNewListFromMistakes());
-                dispatch(
-                  displayAlert({
-                    type: "success",
-                    msg: "List has been successfully created!",
-                  })
-                );
-                history.push("/overview");
-              }}
-            >
-              New list from mistakes
-            </button>
-          )}
-        </>
+        </section>
       )}
     </>
   );

@@ -12,6 +12,7 @@
 .bottom {
   position: absolute;
   bottom: 0;
+  width: calc(100vw - 48px);
 }
 
 .top > img {
