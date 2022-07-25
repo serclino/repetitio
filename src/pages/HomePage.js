@@ -1,24 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
-import { Link } from "react-router-dom";
-/* import { Info } from "../components/Info"; */
+
+import logo from "../resources/logo/logo-landing-page/Group 410@3x.png";
+import style from '../styles/pages/HomePage.module.css'
 
 const HomePage = () => {
   const history = useHistory();
+  const [showPopup, setShowPopup] = useState(false);
 
   return (
-    <>
-      <div className="page">HomePage</div>
-      <Link to="/setup">Go to SetUp</Link>
-      <h3>Routes for mobile pages:</h3>
-      <Link to="/overview">Go to Overview</Link>
-      <br></br>
-      <Link to="/roll">Go to Roll</Link>
-      <h3>Routes for desktop pages:</h3>
-      <Link to="/dashboard">Go to Dashboard</Link>
-      <h2>Start the App:</h2>
-      <button onClick={() => history.push("/setup")}>START</button>
-    </>
+    <section className={style.homepage}>
+      <img src={logo} alt="logo" />
+      <div className={style.interactions}>
+        <button className={style.btnHow} onClick={() => setShowPopup(true)}>How it works</button>
+        <button className={style.btnStart} onClick={() => history.push("/setup")}>Create list</button>
+        <p>Version 1.0.0</p>
+      </div>
+    </section>
   );
 };
 
