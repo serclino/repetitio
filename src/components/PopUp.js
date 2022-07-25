@@ -2,6 +2,7 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { resetAllLists } from "../features/listsSlice";
+import { removeAlert } from "../features/alertSlice";
 
 import style from "../styles/components/PopUp.module.css";
 
@@ -10,8 +11,11 @@ export const PopUp = ({ setIsPopupOpen }) => {
   const history = useHistory();
   const handleYes = () => {
     dispatch(resetAllLists());
+    dispatch(removeAlert()); // to handle very rare situation
+    // in which alert state has some msg
+    // and this msg would appear in the /setup page
     history.push("/setup");
-  };
+  };;
   const handleNo = () => setIsPopupOpen(false);
 
   return (
