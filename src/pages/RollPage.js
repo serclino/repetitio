@@ -10,7 +10,6 @@ import { BackButton } from "../components/BackButton";
 
 import style from "../styles/pages/RollPage.module.css";
 import logo from "../resources/logo/logo@3x.png";
-import cgImg from "../resources/end-state/undraw_super_thank_you_re_f8bo@3x.png";
 
 const RollPage = () => {
   const history = useHistory();
@@ -24,7 +23,6 @@ const RollPage = () => {
       <div className={style.bottom}>
         <JustRolled />
         <Counter />
-
         {mainList.length > 0 && (
           <button
             className={style.backToOverview}
@@ -34,7 +32,12 @@ const RollPage = () => {
           </button>
         )}
         <RollButton />
-        {/* {mainList.length === 0 && <NextSteps />} */}
+        {mainList.length === 0 && (
+          <div className={style.cg}>
+            <h1>Kudos! 🥳</h1>
+            <p>You just finished your revision.</p>
+          </div>
+        )}
       </div>
     </section>
   );
