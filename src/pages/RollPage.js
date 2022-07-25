@@ -24,14 +24,17 @@ const RollPage = () => {
       <div className={style.bottom}>
         <JustRolled />
         <Counter />
-        <button
-          className={style.backToOverview}
-          onClick={() => history.push("/overview")}
-        >
-          List overview
-        </button>
-        {mainList.length > 0 && <RollButton />}
-        {mainList.length === 0 && <NextSteps />}
+
+        {mainList.length > 0 && (
+          <button
+            className={style.backToOverview}
+            onClick={() => history.push("/overview")}
+          >
+            List overview
+          </button>
+        )}
+        <RollButton />
+        {/* {mainList.length === 0 && <NextSteps />} */}
       </div>
     </section>
   );

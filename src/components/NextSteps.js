@@ -15,8 +15,7 @@ export const NextSteps = () => {
 
   return (
     <>
-      <div className="component">NextSteps</div>
-      <h4>Kudos! 🥳 Your list is empty. What's next?</h4>
+      <h3>Kudos! 🥳 Your list is empty. What's next?</h3>
       <button
         onClick={() => {
           dispatch(resetAllLists());

@@ -12,3 +12,18 @@
   color: #fff;
   margin-bottom: 50px;
 }
+
+.lightBtn {
+  width: calc(100vw - 48px);
+  height: 56px;
+  padding: 16px 0px;
+  border-radius: 10px;
+  background-color: #dbf2ec;
+  margin-top: 24px;
+  margin-bottom: 8px;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.41;
+  text-align: center;
+  color: #00b578;
+}
