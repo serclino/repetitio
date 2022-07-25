@@ -5,7 +5,6 @@ import { selectMainList } from "../features/listsSlice";
 import { Counter } from "../components/Counter";
 import { JustRolled } from "../components/JustRolled";
 import { RollButton } from "../components/RollButton";
-import { NextSteps } from "../components/NextSteps";
 import { BackButton } from "../components/BackButton";
 
 import style from "../styles/pages/RollPage.module.css";
