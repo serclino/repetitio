@@ -79,7 +79,7 @@ export const ListGenerator = () => {
           />
         </div>
       </div>
-      <input type="submit" value="Generate list" />
+      <button className={style.submitBtn} type="submit">Generate list</button>
     </form>
   );
 
