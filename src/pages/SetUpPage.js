@@ -12,20 +12,15 @@ const SetUpPage = () => {
   const { showAlert } = useSelector(selectAlert);
 
   return (
-    <section className={styles.page}>
+    <section className={styles.setupPage}>
       <div className={styles.top}>
         <BackButton path="/" text="Back" />
         <img src={logo} alt="logo" />
       </div>
-      <div className={styles.flexContainer}>
-        <article className={styles.textBox}>
-          <h1 className={styles.headline}>Create a list</h1>
-          <p className={styles.text}>
-            Pick a starting number and an ending number of your questions list.
-          </p>
-        </article>
+
+
         <ListGenerator />
-      </div>
+
       {showAlert && <Alert />}
     </section>
   );

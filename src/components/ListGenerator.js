@@ -43,6 +43,12 @@ export const ListGenerator = () => {
 
   const form = (
     <form onSubmit={generateNewList} className={style.generator}>
+      <article className={style.textBox}>
+        <h1 className={style.headline}>Create a list</h1>
+        <p className={style.text}>
+          Pick a starting number and an ending number of your questions list.
+        </p>
+      </article>
       <div className={style.inputs}>
         <div className={`${style.singleInput} ${style.left}`}>
           <label htmlFor="firstNum">Starting</label>
@@ -79,9 +85,11 @@ export const ListGenerator = () => {
           />
         </div>
       </div>
-      <button className={style.submitBtn} type="submit">Generate list</button>
+      <button className={style.submitBtn} type="submit">
+        Generate list
+      </button>
     </form>
   );
 
-  return <>{form}</>;
+  return form;
 };

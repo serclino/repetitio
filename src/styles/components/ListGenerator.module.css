@@ -1,11 +1,11 @@
 .generator {
+  flex-grow: 1;
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
-  height: 66.5%;
+  flex-direction: column;
 }
 
-.generator > input {
+.submitBtn {
   background-color: #00b578;
   color: #fff;
   font-size: 17px;
@@ -14,6 +14,7 @@
   border-radius: 10px;
   box-shadow: 0 8px 20px 0 rgba(88, 94, 125, 0.08);
   padding: 16px 0px;
+  width: 100%;
 }
 
 .inputs {
@@ -53,4 +54,25 @@
     border: solid 2px #00b578;
     outline: 0 none;
     caret-color: transparent;
+}
+
+
+/* just some text styling */
+.headline {
+  color: #242928;
+  font-size: 20px;
+  line-height: 1.2;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.text {
+  color: #515259;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 1.69;
+}
+
+.textBox {
+  width: 76.45%;
 }
