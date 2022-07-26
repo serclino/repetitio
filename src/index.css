@@ -12,17 +12,32 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 /* Firefox */
-input[type=number] {
+input[type="number"] {
   -moz-appearance: textfield;
 }
 /* hides scrollbar in Google Chrome */
 ::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 html {
+  height: -webkit-fill-available;
   background-color: #f4f6f6;
   font-family: "Poppins", sans-serif;
+}
+
+body {
+  height: 100vh;
+  height: -webkit-fill-available;
+  display: flex;
+  flex-direction: column;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+#root {
+  flex: 1;
+  overflow: scroll;
 }
 
 button {
@@ -58,7 +73,6 @@ input {
   background-color: transparent;
   border: solid 1.5px #c8d1d2;
 }
-
 
 /* --- FONTS --- */
 @font-face {
@@ -108,15 +122,3 @@ input {
     U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
     U+FEFF, U+FFFD;
 }
-
-/* --- DELETE LATER --- */
-.page {
-  font-size: 3rem;
-  color: red;
-}
-
-.component {
-  font-size: 2rem;
-  color: blue;
-}
-
