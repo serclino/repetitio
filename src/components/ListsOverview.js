@@ -12,9 +12,15 @@ export const ListsOverview = () => {
   const mainList = useSelector(selectMainList);
   const rolledList = useSelector(selectRolledList);
   const mistakesList = useSelector(selectMistakesList);
-  const [showRemaining, setShowRemaining] = useState(true);
-  const [showDone, setShowDone] = useState(true);
-  const [showMistakes, setShowMistakes] = useState(true);
+  const [showRemaining, setShowRemaining] = useState(
+    mainList.length === 0 ? false : true
+  );
+  const [showDone, setShowDone] = useState(
+    rolledList.length === 0 ? false : true
+  );
+  const [showMistakes, setShowMistakes] = useState(
+    mistakesList.length === 0 ? false : true
+  );
 
   return (
     <div className={style.scrollable}>
