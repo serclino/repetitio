@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { Singleton } from "../components/Singleton";
@@ -18,24 +18,52 @@ const OverviewPage = () => {
   const history = useHistory();
   const { showAlert } = useSelector(selectAlert);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
+  // next two lines keeps box shadow on navbar when scrolling
+  const [scrolled, setScrolled] = useState(false);
+  const [bottom, setBottom] = useState("");
 
+  useEffect(() => {
+    const breakPoint = document
+      .querySelector(".breakPoint")
+      .getBoundingClientRect();
+    setBottom(
+      breakPoint.bottom -
+        document.querySelector(".navbar").getBoundingClientRect().bottom
+    );
+  }, []);
+
+  const handleScroll = () => {
+    let container = document.querySelector(".container");
+    // console.log("scrollTop", container.scrollTop);
+    // console.log("breakPoint", bottom);
+    if (container.scrollTop >= bottom) {
+      setScrolled(true);
+    } else {
+      setScrolled(false);
+    }
+  };
+
+  // popup when user wants to get back to the Setup page
   const openPopUp = (e) => {
     e.preventDefault();
     setIsPopupOpen(true);
   };
 
   return (
-    <section className={style.overviewPage}>
+    <section
+      className={`${style.overviewPage} container`}
+      onScroll={handleScroll}
+    >
       {isPopupOpen ? <PopUp setIsPopupOpen={setIsPopupOpen} /> : null}
       {showAlert && <Alert />}
 
-      <div className={style.top}>
+      <div className={`${style.top} ${scrolled && style.scrolling} navbar`}>
         <button onClick={(e) => openPopUp(e)} className={style.backBtn}>
           <img src={backArrow} alt="back arrow" /> Create a new list
         </button>
         <img className={style.icon} src={logo} alt="logo" />
       </div>
-      <div className={style.infoAndForm}>
+      <div className={`${style.infoAndForm} breakPoint`}>
         <article className={style.textBox}>
           <h1>Your list is ready</h1>
           <p>
@@ -43,7 +71,6 @@ const OverviewPage = () => {
             your revision.
           </p>
         </article>
-
         <Singleton />
       </div>
       <div className={style.listsAndButton}>

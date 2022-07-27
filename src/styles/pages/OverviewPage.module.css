@@ -21,9 +21,13 @@
   height: 27.2px;
 }
 
+.scrolling {
+  box-shadow: 0 8px 20px 0 rgba(88, 94, 125, 0.15);
+}
+
 .infoAndForm {
   padding: 9px 24px 32px 24px;
-  box-shadow: 0 8px 20px 0 rgba(88, 94, 125, 0.08);
+  box-shadow: 0 8px 20px 0 rgba(88, 94, 125, 0.15);
   background-color: #fff;
 }
 
