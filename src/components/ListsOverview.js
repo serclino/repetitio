@@ -17,7 +17,7 @@ export const ListsOverview = () => {
   const [showMistakes, setShowMistakes] = useState(true);
 
   return (
-    <>
+    <div className={style.scrollable}>
       {/* remaining list */}
       <section className={style.topOverview}>
         <h1>
@@ -85,6 +85,6 @@ export const ListsOverview = () => {
           ))}
         </div>
       )}
-    </>
+    </div>
   );
 };

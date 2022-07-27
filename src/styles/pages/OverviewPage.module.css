@@ -1,69 +1,78 @@
-.page {
-  height: 100%;
-  overflow: hidden;
-}
-
-.whiteBg {
-  background-color: #fff;
-  padding: 54px 24px 32px 24px;
-  box-shadow: 0 8px 20px 0 rgba(88, 94, 125, 0.08);
-}
-
-.grayBg {
-  padding: 32px 24px 50px 24px;
+.overviewPage {
+  overflow-x: hidden;
+  height: -webkit-fill-available;
   background-color: #f4f6f6;
-    margin-top: 20px;
-    height: 60vh;
-    overflow: scroll;
 }
-
-/* whitBg part */
 
 .top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 48px 24px 9px 24px;
+  background-color: white;
+  position: absolute;
+  top: 0;
+  width: -webkit-fill-available;
+  z-index: 2;
 }
 
-.icon {
+.top > img {
   width: 23.7px;
   height: 27.2px;
 }
 
+.infoAndForm {
+  padding: 9px 24px 32px 24px;
+  box-shadow: 0 8px 20px 0 rgba(88, 94, 125, 0.08);
+  background-color: #fff;
+}
+
 .textBox {
+  margin-top: 113px;
   width: 76.5%;
-  margin-top: 22px;
-  margin-bottom: 32px;
 }
 
-.headline {
-  color: #242928;
-  font-size: 20px;
-  line-height: 1.2;
-  font-weight: 600;
+.textBox > h1 {
   margin-bottom: 4px;
-}
-
-.text {
-  color: #515259;
-  font-size: 13px;
-  font-weight: normal;
-  line-height: 1.69;
-}
-
-/* grayBg part */
-.grayBg > button {
-  color: #fff;
-  line-height: 1.41;
+  font-size: 20px;
   font-weight: 600;
-  font-size: 17px;
+  line-height: 1.2;
+  color: #242928;
+}
+
+.textBox > p {
+  margin-bottom: 32px;
+  font-size: 13px;
+  font-style: 400;
+  line-height: 1.69;
+  color: #515259;
+}
+
+.listsAndButton {
+  background-color: #f4f6f6;
+  margin-top: 20px;
+  padding: 0 24px 106px 24px; /* third value must be changed when alterate position of "studyBtn" */
+}
+
+.studyBtn {
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 50px;
+  width: calc(100vw - 48px);
+  height: 56px;
   border-radius: 10px;
   box-shadow: 0 8px 20px 0 rgba(88, 94, 125, 0.08);
   background-color: #00b578;
-  padding: 16px 0;
-  position: absolute;
-  bottom: 50px;
-  width: calc(100% - 48px);
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.41;
+  text-align: center;
+  color: #fff;
+}
+
+.centerStudy {
+  display: flex;
+  justify-content: center;
 }
 
 /* back btn with text */

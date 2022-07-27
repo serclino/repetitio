@@ -7,7 +7,6 @@
 .arrowBtn {
   width: 48px;
   height: 48px;
-  padding: 21px 18.2px;
   margin-right: -18.2px;
 }
 
@@ -18,7 +17,7 @@
 .arrowBtn > img {
   width: 11.6px;
   height: 6px;
-  transform: translateY(-6px);
+
 }
 
 .topOverview > h1 {

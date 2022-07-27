@@ -25,37 +25,42 @@ const OverviewPage = () => {
   };
 
   return (
-    <section className={style.page}>
+    <section className={style.overviewPage}>
       {isPopupOpen ? <PopUp setIsPopupOpen={setIsPopupOpen} /> : null}
       {showAlert && <Alert />}
-      <div className={style.whiteBg}>
-        <div className={style.top}>
-          <button onClick={(e) => openPopUp(e)} className={style.backBtn}>
-            <img src={backArrow} alt="back arrow" /> Create a new list
-          </button>
-          <img className={style.icon} src={logo} alt="logo" />
-        </div>
+
+      <div className={style.top}>
+        <button onClick={(e) => openPopUp(e)} className={style.backBtn}>
+          <img src={backArrow} alt="back arrow" /> Create a new list
+        </button>
+        <img className={style.icon} src={logo} alt="logo" />
+      </div>
+      <div className={style.infoAndForm}>
         <article className={style.textBox}>
-          <h1 className={style.headline}>Your list is ready</h1>
-          <p className={style.text}>
+          <h1>Your list is ready</h1>
+          <p>
             You can add another number that is not in the line or just start
             your revision.
           </p>
         </article>
+
         <Singleton />
       </div>
-      <div className={style.grayBg}>
+      <div className={style.listsAndButton}>
         <ListsOverview />
-        <button
-          onClick={() => {
+        <div className={style.centerStudy}>
+          <button
+            className={style.studyBtn}
+            onClick={() => {
               dispatch(removeAlert()); // to handle very rare situation
               // in which alert state has some msg
               // and this msg would appear in the /setup page
-            history.push("/roll");
-          }}
-        >
-          Study!
-        </button>
+              history.push("/roll");
+            }}
+          >
+            Study!
+          </button>
+        </div>
       </div>
     </section>
   );

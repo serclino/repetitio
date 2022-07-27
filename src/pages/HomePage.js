@@ -25,6 +25,7 @@ const HomePage = () => {
                 <span>randomize</span> your list so all you have to do is to
                 keep calm and <span>repeat</span>.
               </li>
+              <li><span>Don't refresh your page!</span> Otherwise you'll lose your streak.</li>
             </ol>
             <div>
               <button
