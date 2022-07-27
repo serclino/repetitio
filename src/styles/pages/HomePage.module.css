@@ -91,8 +91,6 @@
   letter-spacing: 2px;
 }
 
-
-
 .orderedList {
   list-style: inside decimal none;
 }
@@ -109,6 +107,11 @@
   margin-bottom: 8px;
 }
 
+.popUp > div {
+  display: flex;
+  justify-content: center;
+}
+
 .gotIt {
   height: 48px;
   padding: 0 48.5px;
@@ -120,5 +123,4 @@
   text-align: center;
   color: #00b578;
   margin-top: 27px;
-  transform: translateX(50%);
 }

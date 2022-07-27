@@ -14,20 +14,26 @@ const HomePage = () => {
         <div className={style.blurredBg}>
           <div className={style.popUp}>
             <h1>How it works?</h1>
-            <p className={style.motto}>
-              Repetitio est mater studiorum.
-            </p>
+            <p className={style.motto}>Repetitio est mater studiorum.</p>
             <ol className={style.orderedList}>
               <li>
                 <span>Create a numbered list</span> that reflects your exam
                 questions.
               </li>
               <li>
-                <span>Let's have a walk</span> during which we <span>randomize</span> your
-                list so all you have to do is to keep calm and <span>repeat</span>.
+                <span>Let's have a walk</span> during which we{" "}
+                <span>randomize</span> your list so all you have to do is to
+                keep calm and <span>repeat</span>.
               </li>
             </ol>
-            <button className={style.gotIt} onClick={() => setShowPopup(false)}>Got it</button>
+            <div>
+              <button
+                className={style.gotIt}
+                onClick={() => setShowPopup(false)}
+              >
+                Got it
+              </button>
+            </div>
           </div>
         </div>
       )}
