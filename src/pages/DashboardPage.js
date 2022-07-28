@@ -18,22 +18,29 @@ const DashboardPage = () => {
   const mainList = useSelector(selectMainList);
   const { showAlert } = useSelector(selectAlert);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
-  // to set line on navbar when it starts scrolling
   const [scrolled, setScrolled] = useState(false);
   const [widthOfOverview, setWidthOfOverview] = useState("");
-  const [widthOfScreen, setWidthOfScreen] = useState("");
+  const [dimensions, setDimensions] = useState({ width: window.innerWidth });
+
+  // following two useEffects and handleScroll provides
+  // responsive navbar while scrolling
+  useEffect(() => {
+    function handleResize() {
+      setDimensions({ width: window.innerWidth });
+    }
+    window.addEventListener("resize", handleResize);
+    return (_) => {
+      window.removeEventListener("resize", handleResize);
+    };
+  });
 
   useEffect(() => {
     const rect = document.querySelector(".container").getBoundingClientRect();
-    console.log('widthOfOverview', rect.width);
     setWidthOfOverview(rect.width);
-  }, [widthOfScreen]);
+  }, [dimensions]);
 
   const handleScroll = () => {
     const container = document.querySelector(".container");
-    setWidthOfScreen(window.innerWidth);
-    console.log('widthOfScreen', widthOfScreen);
-    // console.log(container.scrollTop);
     if (container.scrollTop !== 0) {
       setScrolled(true);
     } else {
