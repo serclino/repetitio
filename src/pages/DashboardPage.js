@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Singleton } from "../components/Singleton";
 import { ListsOverview } from "../components/ListsOverview";
 import { Counter } from "../components/Counter";
@@ -8,12 +8,38 @@ import { useSelector } from "react-redux";
 import { selectMainList } from "../features/listsSlice";
 import { PopUp } from "../components/PopUp";
 import { Alert } from "../components/Alert";
-import { selectAlert } from "../features/alertSlice";
+import { selectAlert, removeAlert } from "../features/alertSlice";
+
+import style from "../styles/pages/DashboardPage.module.css";
+import logo from "../resources/logo/logo@3x.png";
+import backArrow from "../resources/back-arrow/arrow-left@3x.png";
 
 const DashboardPage = () => {
   const mainList = useSelector(selectMainList);
   const { showAlert } = useSelector(selectAlert);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
+  // to set line on navbar when it starts scrolling
+  const [scrolled, setScrolled] = useState(false);
+  const [widthOfOverview, setWidthOfOverview] = useState("");
+  const [widthOfScreen, setWidthOfScreen] = useState("");
+
+  useEffect(() => {
+    const rect = document.querySelector(".container").getBoundingClientRect();
+    console.log('widthOfOverview', rect.width);
+    setWidthOfOverview(rect.width);
+  }, [widthOfScreen]);
+
+  const handleScroll = () => {
+    const container = document.querySelector(".container");
+    setWidthOfScreen(window.innerWidth);
+    console.log('widthOfScreen', widthOfScreen);
+    // console.log(container.scrollTop);
+    if (container.scrollTop !== 0) {
+      setScrolled(true);
+    } else {
+      setScrolled(false);
+    }
+  };
 
   const openPopUp = (e) => {
     e.preventDefault();
@@ -21,17 +47,38 @@ const DashboardPage = () => {
   };
 
   return (
-    <>
-      {isPopupOpen ? <PopUp setIsPopupOpen={setIsPopupOpen} /> : null}
-      <div className="page">DashboardPage</div>
-      <button onClick={(e) => openPopUp(e)}>Create a new list</button>
+    <section className={style.dashboardPage}>
       {showAlert && <Alert />}
-      <Singleton />
-      {mainList.length > 0 ? <RollButton /> : null}
-      <JustRolled />
+      {isPopupOpen && <PopUp setIsPopupOpen={setIsPopupOpen} type="new" />}
+
+      <section
+        className={`${style.overviewPart} container`}
+        onScroll={handleScroll}
+      >
+        <div
+          className={`${style.top} ${scrolled && style.scrolling}`}
+          style={{ width: widthOfOverview }}
+        >
+          <button onClick={(e) => openPopUp(e)} className={style.backBtn}>
+            <img src={backArrow} alt="back arrow" /> Create a new list
+          </button>
+        </div>
+        <div className={style.content}>
+          <article className={style.textBox}>
+            <h1>Your list is ready</h1>
+            <p>
+              You can add another number that is not in the line or just start
+              your revision.
+            </p>
+          </article>
+          <Singleton />
+          <ListsOverview />
+          {/* <div className={style.linearTransition}></div> */}
+        </div>
+      </section>
       <Counter />
-      <ListsOverview />
-    </>
+      <section className={style.rollPpart}></section>
+    </section>
   );
 };
 

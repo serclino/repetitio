@@ -6,8 +6,7 @@ import { ListsOverview } from "../components/ListsOverview";
 
 import { PopUp } from "../components/PopUp";
 import { Alert } from "../components/Alert";
-import { selectAlert } from "../features/alertSlice";
-import { removeAlert } from "../features/alertSlice";
+import { selectAlert, removeAlert } from "../features/alertSlice";
 
 import logo from "../resources/logo/logo@3x.png";
 import backArrow from "../resources/back-arrow/arrow-left@3x.png";
@@ -54,7 +53,7 @@ const OverviewPage = () => {
       className={`${style.overviewPage} container`}
       onScroll={handleScroll}
     >
-      {isPopupOpen ? <PopUp setIsPopupOpen={setIsPopupOpen} type='new' /> : null}
+      {isPopupOpen && <PopUp setIsPopupOpen={setIsPopupOpen} type='new' />}
       {showAlert && <Alert />}
 
       <div className={`${style.top} ${scrolled && style.scrolling} navbar`}>
