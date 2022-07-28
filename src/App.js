@@ -13,7 +13,7 @@ function App() {
     <div className="App">
       <Route exact path="/" component={HomePage} />
       <Route exact path="/setup" component={SetUpPage} />
-      <Media query="(max-width: 599px)">
+      <Media query="(max-width: 768px)">
         {(matches) =>
           matches ? (
             <Switch>

@@ -18,12 +18,12 @@
 .interactions {
   display: flex;
   flex-direction: column;
+  width: 100%;
+  max-width: 327px;
 }
 
 .interactions > button {
   height: 56px;
-  padding: auto;
-  width: calc(100vw - 48px);
   font-size: 17px;
   font-weight: 600;
   line-height: 1.41;
@@ -123,4 +123,15 @@
   text-align: center;
   color: #00b578;
   margin-top: 27px;
+}
+
+@media only screen and (min-width: 768px) {
+  .interactions > p {
+    margin-top: 59px;
+    margin-bottom: 20px;
+  }
+
+  .popUp {
+    max-width: 327px;
+  }
 }
