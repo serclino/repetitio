@@ -81,10 +81,21 @@ const DashboardPage = () => {
           <Singleton />
           <ListsOverview />
         </div>
-        <div className={style.linearTransition} style={{width: widthOfOverview}}></div>
+        <div
+          className={style.linearTransition}
+          style={{ width: widthOfOverview }}
+        ></div>
       </section>
-      <Counter />
-      <section className={style.rollPpart}></section>
+      <section className={style.rollPart}>
+        <div className={style.logoContainer}>
+          <img src={logo} alt="logo" />
+        </div>
+        <JustRolled />
+        <div className={style.counterAndBtn}>
+          <Counter />
+          <RollButton />
+        </div>
+      </section>
     </section>
   );
 };

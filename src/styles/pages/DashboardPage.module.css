@@ -4,6 +4,8 @@
   display: flex;
 }
 
+/* -- OVERVIEW part -- */
+
 .overviewPart {
   box-sizing: border-box;
   width: 41.3%;
@@ -25,7 +27,6 @@
 
 .scrolling {
   box-shadow: 0 8px 20px 0 rgb(88 94 125 / 8%);
-  border-bottom: 1px solid #00b578;
 }
 
 .backBtn {
@@ -68,7 +69,6 @@
   margin-top: 95px;
 }
 
- 
 .linearTransition {
   position: absolute;
   bottom: 0;
@@ -81,3 +81,27 @@
   );
 }
 
+/* -- ROLL part -- */
+
+.rollPart {
+  flex-grow: 1;
+  padding: 48px 48px 50px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.logoContainer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.logoContainer > img {
+  width: 23.7px;
+  height: 27.2px;
+}
+
+.counterAndBtn {
+  width: 327px;
+    margin: 0 auto;
+}
