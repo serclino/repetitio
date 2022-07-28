@@ -54,7 +54,7 @@ const OverviewPage = () => {
       className={`${style.overviewPage} container`}
       onScroll={handleScroll}
     >
-      {isPopupOpen ? <PopUp setIsPopupOpen={setIsPopupOpen} /> : null}
+      {isPopupOpen ? <PopUp setIsPopupOpen={setIsPopupOpen} type='new' /> : null}
       {showAlert && <Alert />}
 
       <div className={`${style.top} ${scrolled && style.scrolling} navbar`}>
