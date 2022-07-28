@@ -42,8 +42,8 @@
 }
 
 .interactions > p {
-  margin: 24px 0 9px;
-  font-size: 12px;
+  margin: 7px 0 3px;
+  font-size: 8px;
   font-weight: 400;
   line-height: 1.83;
   text-align: center;
@@ -82,7 +82,7 @@
 }
 
 .popUp > p {
-  font-family: 'Great Vibes';
+  font-family: "Great Vibes";
   font-size: 21px;
   line-height: 1.57;
   color: #242928;
@@ -127,8 +127,9 @@
 
 @media only screen and (min-width: 768px) {
   .interactions > p {
-    margin-top: 59px;
-    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-bottom: 12px;
+    font-size: 10px;
   }
 
   .popUp {

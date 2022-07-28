@@ -76,3 +76,21 @@
 .textBox {
   width: 76.45%;
 }
+
+@media only screen and (min-width: 768px) {
+ .generator {
+  max-width: 327px;
+  margin: 0 auto;
+ }
+
+ .textBox {
+  text-align: center;
+  margin: 0 auto;
+ }
+
+ .inputs {
+  flex-grow: 1;
+  margin-top: 16.2%;
+ }
+}
+

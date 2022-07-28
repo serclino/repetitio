@@ -1,7 +1,7 @@
 /* positioning */
 .setupPage {
   height: inherit;
-  padding: 48px 24px 50px 24px;
+  padding: 24px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -17,4 +17,14 @@
 .top > img {
   width: 23.7px;
   height: 27.2px;
+}
+
+@media only screen and (min-width: 768px) {
+ .setupPage {
+  padding: 48px 48px 50px 48px;
+ }
+
+ .top {
+  margin-bottom: 9.63%;
+ }
 }

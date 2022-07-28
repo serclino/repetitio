@@ -17,10 +17,7 @@ const SetUpPage = () => {
         <BackButton path="/" text="Back" />
         <img src={logo} alt="logo" />
       </div>
-
-
-        <ListGenerator />
-
+      <ListGenerator />
       {showAlert && <Alert />}
     </section>
   );
