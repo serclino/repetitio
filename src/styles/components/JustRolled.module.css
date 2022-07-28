@@ -1,6 +1,5 @@
 .justRolled {
   text-align: center;
-
 }
 
 .text {
@@ -10,7 +9,7 @@
 }
 
 .letsRoll {
-    font-size: 14px;
+  font-size: 14px;
   line-height: 1.57;
   color: #6e7782;
   margin-bottom: 50%;
@@ -45,4 +44,17 @@
 .unmark {
   position: relative;
   left: -10px;
+}
+
+.image {
+  width: 119.8px;
+  height: 45.2px;
+}
+
+.kudos {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: #242928;
+  margin-bottom: 5px;
 }

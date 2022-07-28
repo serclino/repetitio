@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
+  selectMainList,
   selectRolledList,
   selectMistakesList,
   toggleMistake,
@@ -9,9 +10,11 @@ import style from "../styles/components/JustRolled.module.css";
 
 import markMistake from "../resources/markMistake.svg";
 import unmarkMistake from "../resources/unmarkMistake.svg";
+import hearts from "../resources/hearts/hearts@3x.png";
 
 export const JustRolled = () => {
   const dispatch = useDispatch();
+  const mainList = useSelector(selectMainList);
   const rolledList = useSelector(selectRolledList);
   const mistakesList = useSelector(selectMistakesList);
   const rolledNum = rolledList[rolledList.length - 1]?.number;
@@ -35,10 +38,16 @@ export const JustRolled = () => {
 
   return (
     <section className={style.justRolled}>
-      {rolledList.length > 0 ? (
+      {rolledList.length === 0 && <p className={style.text}>Roll !</p>}
+      {mainList.length > 0 && rolledList.length > 0 && (
         <p className={style.text}>Rolled question</p>
-      ) : (
-        <p className={style.letsRoll}>Let's roll!</p>
+      )}
+      {mainList.length === 0 && (
+        <>
+          <img className={style.image} src={hearts} alt="kudos" />
+          <h2 className={style.kudos}>Kudos!</h2>
+          <p className={style.text}>Your very last question is</p>
+        </>
       )}
       <h1 className={style.bigNum}>{rolledNum}</h1>
       {rolledList.length > 0 && btn}

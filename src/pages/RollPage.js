@@ -14,29 +14,15 @@ const RollPage = () => {
   const history = useHistory();
   const mainList = useSelector(selectMainList);
   return (
-    <section className={style.page}>
+    <section className={style.rollPage}>
       <div className={style.top}>
         <BackButton path="/overview" text="List overview" />
         <img src={logo} alt="logo" />
       </div>
-      <div className={style.bottom}>
-        <JustRolled />
+      <JustRolled />
+      <div className={style.counterAndBtn}>
         <Counter />
-        {mainList.length > 0 && (
-          <button
-            className={style.backToOverview}
-            onClick={() => history.push("/overview")}
-          >
-            List overview
-          </button>
-        )}
         <RollButton />
-        {mainList.length === 0 && (
-          <div className={style.cg}>
-            <h1>Kudos! 🥳</h1>
-            <p>You just finished your revision.</p>
-          </div>
-        )}
       </div>
     </section>
   );

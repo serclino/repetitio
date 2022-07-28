@@ -1,34 +1,30 @@
 .btn {
   height: 56px;
-  width: calc(100vw - 48px);
-  padding: 16px 0px;
   border-radius: 10px;
-  box-shadow: 0 8px 20px 0 rgba(88, 94, 125, 0.08);
   font-size: 17px;
   font-weight: 600;
   line-height: 1.41;
   text-align: center;
 }
 
-.roll {
-  margin-bottom: 50px;
+.greenBtn {
   color: #fff;
+  box-shadow: 0 8px 20px 0 rgba(88, 94, 125, 0.08);
   background-color: #00b578;
+
 }
 
-.createNew {
-  color: #fff;
-  background-color: #00b578;
-  margin-bottom: 50px;
-}
-
-.createFromMistakes {
+.lightGreenBtn {
   color: #00b578;
   background-color: #dbf2ec;
+  margin: 8px 0;
 }
 
-.container {
-  height: 56px;
-  margin-bottom: 8px;
-  margin-top: 41px;
+.noBgBtn {
+  color: #00b578;
+}
+
+.btnsContainer {
+  display: flex;
+  flex-direction: column;
 }

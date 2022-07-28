@@ -21,47 +21,28 @@ export const RollButton = () => {
   return (
     <>
       {mainList.length > 0 ? (
-        <button
-          className={`${style.btn} ${style.roll}`}
-          onClick={() => dispatch(rollDice())}
-        >
-          Roll a dice
-        </button>
-      ) : (
-        <section>
-          <div className={style.container}>
-            {mistakesList.length > 0 && (
-              <button
-                className={`${style.btn} ${style.createFromMistakes}`}
-                onClick={() => {
-                  dispatch(generateNewListFromMistakes());
-                  dispatch(
-                    displayAlert({
-                      type: "success",
-                      msg: "List has been successfully created!",
-                    })
-                  );
-                  history.push("/overview");
-                }}
-              >
-                New list from mistakes
-              </button>
-            )}
-          </div>
-
+        <div className={style.btnsContainer}>
           <button
-            className={`${style.btn} ${style.createNew}`}
-            onClick={() => {
-              dispatch(resetAllLists());
-              dispatch(removeAlert()); // to handle very rare situation
-              // in which alert state has some msg
-              // and this msg would appear in the /setup page
-              history.push("/setup");
-            }}
+            className={`${style.btn} ${style.greenBtn}`}
+            onClick={() => dispatch(rollDice())}
           >
+            Roll a dice
+          </button>
+        </div>
+      ) : (
+        <div className={style.btnsContainer}>
+          <button className={`${style.btn} ${style.noBgBtn}`}>
+            Back to Homepage
+          </button>
+          <button className={`${style.btn} ${style.lightGreenBtn}`}>
             Create a new list
           </button>
-        </section>
+          {mistakesList.length > 0 && (
+            <button className={`${style.btn} ${style.greenBtn}`}>
+              New list from mistakes
+            </button>
+          )}
+        </div>
       )}
     </>
   );
