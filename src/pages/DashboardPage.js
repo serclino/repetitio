@@ -80,8 +80,8 @@ const DashboardPage = () => {
           </article>
           <Singleton />
           <ListsOverview />
-          {/* <div className={style.linearTransition}></div> */}
         </div>
+        <div className={style.linearTransition} style={{width: widthOfOverview}}></div>
       </section>
       <Counter />
       <section className={style.rollPpart}></section>

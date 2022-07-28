@@ -65,3 +65,11 @@
   color: #6e7782;
   margin-right: 9px;
 }
+
+
+@media only screen and (min-width: 768px) {
+  .popUp {
+    max-width: 327px;
+  }
+}
+
