@@ -13,8 +13,7 @@ const HomePage = () => {
       {showPopup && (
         <div className={style.blurredBg}>
           <div className={style.popUp}>
-            <h1>How it works?</h1>
-            <p className={style.motto}>Repetitio est mater studiorum.</p>
+            <h1>Repetitio est<br/>mater studiorum.</h1>
             <ol className={style.orderedList}>
               <li>
                 <span>Create a numbered list</span> that reflects your exam

@@ -6,8 +6,9 @@
   height: 56%;
   position: absolute;
   bottom: 0;
-  margin: 0 auto;
-  width: 100%;
+  left: 50%;
+  width: 327px;
+  transform: translateX(-50%);
 }
 
 .homepage > img {
@@ -76,12 +77,13 @@
 .popUp > h1 {
   font-size: 20px;
   font-weight: 600;
-  line-height: 1.2;
+  line-height: 1.5;
   color: #242928;
-  margin-bottom: 12px;
+  margin-bottom: 20px;
+ 
 }
 
-.popUp > p {
+/* .popUp > p {
   font-family: "Great Vibes";
   font-size: 21px;
   line-height: 1.57;
@@ -89,7 +91,7 @@
   margin-bottom: 6px;
   text-align: center;
   letter-spacing: 2px;
-}
+} */
 
 .orderedList {
   list-style: inside decimal none;
