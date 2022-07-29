@@ -5,17 +5,15 @@ import { Counter } from "../components/Counter";
 import { JustRolled } from "../components/JustRolled";
 import { RollButton } from "../components/RollButton";
 import { useSelector } from "react-redux";
-import { selectMainList } from "../features/listsSlice";
 import { PopUp } from "../components/PopUp";
 import { Alert } from "../components/Alert";
-import { selectAlert, removeAlert } from "../features/alertSlice";
+import { selectAlert } from "../features/alertSlice";
 
 import style from "../styles/pages/DashboardPage.module.css";
 import logo from "../resources/logo/logo@3x.png";
 import backArrow from "../resources/back-arrow/arrow-left@3x.png";
 
 const DashboardPage = () => {
-  const mainList = useSelector(selectMainList);
   const { showAlert } = useSelector(selectAlert);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -57,7 +55,6 @@ const DashboardPage = () => {
     <section className={style.dashboardPage}>
       {showAlert && <Alert />}
       {isPopupOpen && <PopUp setIsPopupOpen={setIsPopupOpen} type="new" />}
-
       <section
         className={`${style.overviewPart} container`}
         onScroll={handleScroll}

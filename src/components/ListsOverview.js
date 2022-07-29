@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import {
   selectMainList,
@@ -15,12 +15,32 @@ export const ListsOverview = () => {
   const [showRemaining, setShowRemaining] = useState(
     mainList.length === 0 ? false : true
   );
-  const [showDone, setShowDone] = useState(
-    rolledList.length === 0 ? false : true
-  );
-  const [showMistakes, setShowMistakes] = useState(
-    mistakesList.length === 0 ? false : true
-  );
+  const [showDone, setShowDone] = useState({
+    state: rolledList.length === 0 ? false : true,
+    userInteracted: false,
+  });
+  const [showMistakes, setShowMistakes] = useState({
+    state: mistakesList.length === 0 ? false : true,
+    userInteracted: false,
+  });
+
+  useEffect(() => {
+    if (mainList.length === 0) {
+      setShowRemaining(false);
+    }
+    if (rolledList.length === 1 && showDone.userInteracted === false) {
+      setShowDone((prev) => ({
+        ...prev,
+        state: true,
+      }));
+    }
+    if (mistakesList.length === 1 && showMistakes.userInteracted === false) {
+      setShowMistakes((prev) => ({
+        ...prev,
+        state: true,
+      }));
+    }
+  }, [mainList, rolledList, mistakesList, showDone.userInteracted, showMistakes.userInteracted]);
 
   return (
     <div className={style.scrollable}>
@@ -53,13 +73,18 @@ export const ListsOverview = () => {
           Done <span>{`(${rolledList.length})`}</span>
         </h1>
         <button
-          onClick={() => setShowDone((prev) => !prev)}
-          className={`${style.arrowBtn} ${!showDone ? style.arrowDown : ""}`}
+          onClick={() =>
+            setShowDone((prev) => ({
+              state: !prev.state,
+              userInteracted: true,
+            }))
+          }
+          className={`${style.arrowBtn} ${!showDone.state && style.arrowDown}`}
         >
           <img src={toggleArrow} alt="toggle arrow" />
         </button>
       </section>
-      {showDone && (
+      {showDone?.state && (
         <div className={style.listedNums}>
           {rolledList.map((num, id) => (
             <div className={`numero ${num.css}`} key={id}>
@@ -74,15 +99,20 @@ export const ListsOverview = () => {
           Mistakes <span>{`(${mistakesList.length})`}</span>
         </h1>
         <button
-          onClick={() => setShowMistakes((prev) => !prev)}
+          onClick={() =>
+            setShowMistakes((prev) => ({
+              state: !prev.state,
+              userInteracted: true,
+            }))
+          }
           className={`${style.arrowBtn} ${
-            !showMistakes ? style.arrowDown : ""
+            !showMistakes.state && style.arrowDown
           }`}
         >
           <img src={toggleArrow} alt="toggle arrow" />
         </button>
       </section>
-      {showMistakes && (
+      {showMistakes.state && (
         <div className={style.listedNums}>
           {mistakesList.map((num, id) => (
             <div className={`numero ${num.css}`} key={id}>
