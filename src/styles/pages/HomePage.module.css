@@ -83,16 +83,6 @@
  
 }
 
-/* .popUp > p {
-  font-family: "Great Vibes";
-  font-size: 21px;
-  line-height: 1.57;
-  color: #242928;
-  margin-bottom: 6px;
-  text-align: center;
-  letter-spacing: 2px;
-} */
-
 .orderedList {
   list-style: inside decimal none;
 }
@@ -100,7 +90,7 @@
 .orderedList > li::marker,
 .orderedList > li > span {
   color: #00b578;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
   line-height: 1.57;
 }
